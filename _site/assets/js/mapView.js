@@ -340,7 +340,7 @@ function drawScene() {
     drawNodes(nodeData);
 }
 
-fetch('node_data.json')
+fetch('/_data/node_data.json')
     .then(response => response.json())
     .then(data => {
         nodeData = data.nodes;
