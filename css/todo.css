@@ -1,0 +1,129 @@
+/* Override map.css body styles for scrolling */
+body {
+    overflow-y: scroll !important;
+    overflow-x: hidden;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+}
+
+.back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    color: #E0E0E0;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 8px 12px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #222;
+    z-index: 100;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #444;
+    color: #fff;
+}
+
+.todo-container {
+    background-color: #22252A;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 600px;
+    margin-top: 40px;
+}
+
+.todo-container h1 {
+    text-align: center;
+    color: #fff;
+    font-family: 'monospace', sans-serif;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.input-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#todo-input {
+    flex-grow: 1;
+    padding: 12px;
+    border: 1px solid #444;
+    border-radius: 6px;
+    background-color: #33363D;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#todo-input::placeholder {
+    color: #888;
+}
+
+#todo-input:focus {
+    border-color: #00e6e6;
+}
+
+#add-button {
+    padding: 12px 20px;
+    background-color: #00e6e6;
+    color: #222;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+#add-button:hover {
+    background-color: #00ffc8;
+    transform: scale(1.02);
+}
+
+#todo-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#todo-list li {
+    background-color: #2B2E33;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+#todo-list li:hover {
+    background-color: #33363D;
+}
+
+#todo-list li.completed {
+    text-decoration: line-through;
+    color: #777;
+    background-color: #1A1D20;
+}
+
+.delete-btn {
+    background: none;
+    border: none;
+    color: #ff6666;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.delete-btn:hover {
+    color: #ff3333;
+}

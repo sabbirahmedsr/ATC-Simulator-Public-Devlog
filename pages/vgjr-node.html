@@ -3,10 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VGJR Node</title>
+    <title>VGHS Node</title>
+    <link rel="stylesheet" href="../css/map.css">
 </head>
-<body data-json-path="vgjr_node_data.json" data-image-path="vgjr-runway.png">
+<body data-json-path="../data/vgjr_node_data.json" data-image-path="../image/runway.png">
+    <div id="nodeTypeFilters" style="position:absolute;top:10px;left:10px;z-index:10;color:#0ff;background:#222;padding:8px;border-radius:8px;">
+        <hr style="border-color:#444; margin:10px 0;">
+
+        <label style="color:white; font-weight:bold;">
+            <input type="checkbox" id="showImageToggle" checked>
+            Show Runway Image
+        </label>
+    </div>
+
     <canvas id="mapCanvas"></canvas>
-    <script src="mapView.js"></script>
+    <script src="../js/mapView.js"></script>
 </body>
 </html>

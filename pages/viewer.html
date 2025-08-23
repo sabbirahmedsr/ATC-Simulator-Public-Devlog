@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Viewer</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown.min.css">
+
+    <style>
+        body {
+            background-color: #1A1A1A; /* A premium dark color */
+            margin: 0;
+            padding: 20px;
+            overflow: auto; /* Enable scrolling */
+            color: #E0E0E0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+        }
+
+        /* Adjust the markdown-body for the dark theme */
+        .markdown-body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+        }
+
+        @media (max-width: 767px) {
+            .markdown-body {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <article class="markdown-body">
+        <div id="content"></div>
+    </article>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const filePath = urlParams.get('file');
+
+        if (filePath) {
+            fetch(filePath)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('File not found: ' + filePath);
+                    }
+                    return response.text();
+                })
+                .then(text => {
+                    const html = marked.parse(text);
+                    document.getElementById('content').innerHTML = html;
+                })
+                .catch(error => {
+                    document.getElementById('content').innerHTML = `
+                        <h1>Error</h1>
+                        <p>Could not load the file: ${filePath}</p>
+                        <p>${error.message}</p>
+                    `;
+                    console.error('Error loading markdown file:', error);
+                });
+        } else {
+            document.getElementById('content').innerHTML = '<h1>No file specified.</h1>';
+        }
+    </script>
+</body>
+</html>

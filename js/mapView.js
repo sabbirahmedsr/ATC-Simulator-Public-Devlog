@@ -4,7 +4,6 @@ const ctx = canvas.getContext('2d');
 // --- DYNAMIC DATA AND IMAGE PATHS ---
 const jsonPath = document.body.getAttribute('data-json-path');
 const imagePath = document.body.getAttribute('data-image-path');
-const imageAngle = parseFloat(document.body.getAttribute('data-image-angle')) || 0;
 
 // Zoom/pan variables FIRST!
 let scale = 1;
@@ -291,15 +290,10 @@ function drawBackgroundImage() {
     ctx.save();
     ctx.setTransform(scale, 0, 0, scale, offsetX, offsetY);
 
-    const angleInRadians = imageAngle * Math.PI / 180;
-    
-    ctx.translate(0, 0);
-    ctx.rotate(angleInRadians);
-
-    const imgWidth = 285 * meterToPixel;
+    const imgWidth = 400 * meterToPixel;
     const imgHeight = 500 * meterToPixel;
 
-    ctx.drawImage(runwayImage, -imgWidth / 2, -imgHeight, imgWidth, imgHeight);
+    ctx.drawImage(runwayImage, -imgWidth, -imgHeight, imgWidth, imgHeight);
 
     ctx.restore();
 }
