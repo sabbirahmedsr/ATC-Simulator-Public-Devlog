@@ -2,9 +2,9 @@ const canvas = document.getElementById('mapCanvas');
 const ctx = canvas.getContext('2d');
 
 // --- DYNAMIC DATA AND IMAGE PATHS ---
-// Get the JSON and image paths from the <body> tag
 const jsonPath = document.body.getAttribute('data-json-path');
 const imagePath = document.body.getAttribute('data-image-path');
+const imageAngle = parseFloat(document.body.getAttribute('data-image-angle')) || 0;
 
 // Zoom/pan variables FIRST!
 let scale = 1;
@@ -19,7 +19,6 @@ let nodeData = [];
 
 // Add this variable near the top of your script
 const runwayImage = new Image();
-// Set the image source dynamically
 runwayImage.src = imagePath; 
 let isImageLoaded = false;
 let showBackgroundImage = true;
@@ -292,9 +291,7 @@ function drawBackgroundImage() {
     ctx.save();
     ctx.setTransform(scale, 0, 0, scale, offsetX, offsetY);
 
-    // This part should be dynamic based on your data.
-    // I'll add a placeholder for now.
-    const angleInRadians = (324 - 90) * Math.PI / 180;
+    const angleInRadians = imageAngle * Math.PI / 180;
     
     ctx.translate(0, 0);
     ctx.rotate(angleInRadians);
@@ -344,8 +341,14 @@ if (jsonPath) {
 // Create checkboxes
 function createNodeTypeFilters() {
     const container = document.getElementById('nodeTypeFilters');
-    container.innerHTML = `
-        <b>Node Types:</b><br>
+    
+    if (!container) {
+        console.error("The #nodeTypeFilters element was not found.");
+        return;
+    }
+    
+    // Append the node group toggles to the existing HTML
+    container.innerHTML += `
         <label style="margin-right:12px; color:#00ffc8; font-weight:bold;">
             <input type="checkbox" id="filter_arrivalGroup" checked>
             Show All Arrival Types
@@ -357,6 +360,7 @@ function createNodeTypeFilters() {
         <br>
     `;
 
+    // Append individual node type toggles
     nodeTypeNames.forEach(type => {
         const id = `filter_${type}`;
         container.innerHTML += `
@@ -395,7 +399,6 @@ function createNodeTypeFilters() {
         drawScene();
     });
 }
-
 createNodeTypeFilters();
 
 // Add the event listener for the new toggle button

@@ -4,12 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VGHS Node</title>
-    <link rel="stylesheet" href="../css/map.css"> 
+    <link rel="stylesheet" href="../css/map.css">
 </head>
-<body data-json-path="../data/vghs_node_data.json" data-image-path="../vghs-runway.png">
+<body data-json-path="../data/vghs_node_data.json" data-image-path="../image/runway.png" data-image-angle="324">
     <div id="nodeTypeFilters" style="position:absolute;top:10px;left:10px;z-index:10;color:#0ff;background:#222;padding:8px;border-radius:8px;">
+        <hr style="border-color:#444; margin:10px 0;">
+
+        <label style="color:white; font-weight:bold;">
+            <input type="checkbox" id="showImageToggle" checked>
+            Show Runway Image
+        </label>
     </div>
-    
+
     <canvas id="mapCanvas"></canvas>
     <script src="../js/mapView.js"></script>
 </body>

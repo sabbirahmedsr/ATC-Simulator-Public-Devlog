@@ -8,3 +8,18 @@ canvas {
     display: block;
     background: #181A20;
 }
+
+#nodeTypeFilters {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+    color: #0ff;
+    background: #222;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+#nodeTypeFilters label {
+    margin-right: 8px;
+}
