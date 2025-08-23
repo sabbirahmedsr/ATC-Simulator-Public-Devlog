@@ -23,17 +23,14 @@ author: AZMI STUDIO
 author_name: AZMI STUDIO
 email: info@azmistudio.com
 description: >- # this means to ignore newlines until "baseurl:"
-  BAF ATC Simulator Public Devlog is a community-driven project that aims to create a realistic air traffic control simulator. This project is open-source and welcomes contributions from developers, artists, and aviation enthusiasts.
-  The simulator will feature realistic air traffic control procedures, voice communication, and a variety of aircraft and airports. The goal is to provide a platform for training and entertainment for both aspiring and experienced air traffic controllers.
-  The project is currently in the early stages of development, with a focus on building the core features and functionality. The team is actively seeking contributors to help with coding, art, and design.
-  If you are interested in contributing to the project, please visit the GitHub repository and join the community. Together, we can create a realistic and immersive air traffic control simulator that will be
+  Public Devlog for BAF ATC Simulator
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
 github_username:  jekyll
 
 # Build settings
-theme: jekyll-theme-chirpy
+theme: jekyll-theme-midnight
 plugins:
  - jekyll-feed
 
