@@ -5,22 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My First Static Site</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
     <header>
-        <h1>Welcome to My Website</h1>
+        <h1 class="main-heading">ATC Simulator Devlog</h1>
     </header>
 
-    <main>
-        <p id="message">This is a simple static page.</p>
-        <button onclick="changeText()">Click me!</button>
+    <main class="container">
+        <a href="pages/vghs-node.html" class="card-link">
+            <div class="card">
+                <div class="icon-box"><i class="fas fa-plane"></i></div>
+                <div class="title-box"><h3>VGHS NODE</h3></div>
+            </div>
+        </a>
+
+        <a href="vghs-call.html" class="card-link">
+            <div class="card">
+                <div class="icon-box"><i class="fas fa-headset"></i></div>
+                <div class="title-box"><h3>VGHS CALL</h3></div>
+            </div>
+        </a>
+
+        <a href="vgjr-node.html" class="card-link">
+            <div class="card">
+                <div class="icon-box"><i class="fas fa-plane"></i></div>
+                <div class="title-box"><h3>VGJR NODE</h3></div>
+            </div>
+        </a>
+
+        <a href="vgjr-call.html" class="card-link">
+            <div class="card">
+                <div class="icon-box"><i class="fas fa-headset"></i></div>
+                <div class="title-box"><h3>VGJR CALL</h3></div>
+            </div>
+        </a>
     </main>
 
     <footer>
         <p>Copyright &copy; 2025</p>
     </footer>
 
-    <script src="js/app.js"></script>
 </body>
 </html>
