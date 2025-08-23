@@ -8,14 +8,15 @@ source "https://rubygems.org"
 # This will help ensure the proper Jekyll version is running.
 # Happy Jekylling!
 gem "jekyll", "~> 4.4.1"
-# This is the theme for sites.
-gem "jekyll-theme-chirpy"
-# If you want to use GitHub Pages, remove the "gem "jekyll"" above and
-# uncomment the line below. To upgrade, run `bundle update github-pages`.
-# gem "github-pages", group: :jekyll_plugins
-# If you have any plugins, put them here!
+
+# Comment out this line
+# gem "jekyll", "~> 4.4.1"
+
+# Uncomment this line and add the Chirpy theme here
+gem "github-pages", group: :jekyll_plugins
+
 group :jekyll_plugins do
-  gem "jekyll-feed", "~> 0.12"
+  gem "jekyll-theme-chirpy"
 end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
