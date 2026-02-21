@@ -80,12 +80,23 @@ const createAircraftCardHtml = (aircraft) => {
     const origin = aircraft.origin || 'N/A, N/A';
     const destination = aircraft.destination || 'N/A, N/A';
 
+    // Generate the 3D view button HTML only if a model URL is provided in the data.
+    let view3dButtonHtml = '';
+    if (aircraft.model3dUrl) {
+        view3dButtonHtml = `
+            <a href="#" class="view-3d-btn" data-model-url="${aircraft.model3dUrl}" data-model-name="${aircraft.model}" title="View 3D Model">
+                <i class="fa-solid fa-cube"></i>
+            </a>
+        `;
+    }
+
     return `
         <div class="aircraft-card" id="aircraft-${aircraft.callSign}">
             <div class="card-image-container">
                 <a href="${aircraft.imageUrl}" target="_blank">
                     <img src="${aircraft.imageUrl}" alt="${aircraft.model}" class="aircraft-image">
                 </a>
+                ${view3dButtonHtml}
                 <div class="image-attribution">
                     Source: <a href="${aircraft.imageUrl}" target="_blank">${sourceDomain}</a>
                 </div>
@@ -262,6 +273,45 @@ const openFlightRadar24Link = (callsign) => {
 };
 
 /**
+ * Injects custom CSS to style the 3D view button with a caption.
+ * Overrides the default icon-only styles.
+ */
+const inject3DButtonStyles = () => {
+    const style = document.createElement('style');
+    style.textContent = `
+        .card-image-container {
+            position: relative;
+        }
+        .view-3d-btn {
+            position: absolute;
+            bottom: 5px;
+            left: 5px;
+            width: 30px;
+            height: 30px;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(2px);
+            color: #e0e0e0 !important;
+            border: 1px solid rgba(255, 255, 255, 0.3) !important;
+            border-radius: 4px !important;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            z-index: 5;
+            font-size: 0.9rem;
+        }
+        .view-3d-btn:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #121212 !important;
+            border-color: #ffffff !important;
+            transform: scale(1.05);
+        }
+    `;
+    document.head.appendChild(style);
+};
+
+/**
  * Sub-Module: Main Application Flow
  * Description: The core function that orchestrates data loading, rendering, and event handling.
  */
@@ -368,6 +418,9 @@ const renderAircrafts = async () => {
     const aircraftData = await fetchData('../data/all-aircraft-data.json');
 
     if (aircraftData) {
+        // Inject styles for the 3D button
+        inject3DButtonStyles();
+
         // Store the original data for all subsequent filtering operations.
         allAircraftData = aircraftData;
 
@@ -413,6 +466,23 @@ const renderAircrafts = async () => {
                     } else if (type === 'model') {
                         const model = detailItemBtn.dataset.model;
                         openGoogleSearch(model);
+                    }
+                    return;
+                }
+
+                // Handle click on the View 3D Model button.
+                const view3dBtn = e.target.closest('.view-3d-btn');
+                if (view3dBtn) {
+                    e.preventDefault();
+                    const modelUrl = view3dBtn.dataset.modelUrl;
+                    const modelName = view3dBtn.dataset.modelName;
+                    // Call the open function from the new modular script
+                    // Use window.Aircraft3DViewer to ensure we access the global object
+                    if (window.Aircraft3DViewer) {
+                        window.Aircraft3DViewer.open(modelUrl, modelName);
+                    } else {
+                        console.error("Aircraft3DViewer is not defined. Please ensure 'js/aircraft-3d-viewer.js' is included and loaded correctly.");
+                        alert("The 3D Viewer feature is currently unavailable.");
                     }
                     return;
                 }

@@ -11,7 +11,8 @@
     "length": "73.9 m",
     "wingspan": "64.8 m",
     "height": "18.5 m",
-    "imageUrl": "https://photos.flightaware.com/photos/retriever/c3ea657548379317234bd7e2dab7702e7ae2dbc4"
+    "imageUrl": "https://photos.flightaware.com/photos/retriever/c3ea657548379317234bd7e2dab7702e7ae2dbc4",
+    "model3dUrl": "../data/3d-models/Airplane_THA321_B777.glb"
   },
   {
     "callSign": "EK584",
@@ -25,7 +26,8 @@
     "length": "67.9 m",
     "wingspan": "63.45 m",
     "height": "17.3 m",
-    "imageUrl": "https://cdn.jetphotos.com/full/6/678096_1754819716.jpg"
+    "imageUrl": "https://cdn.jetphotos.com/full/6/678096_1754819716.jpg",
+    "model3dUrl": "../data/3d-models/Airplane_EK584_B777.glb"       
   },
   {
     "callSign": "BG367",
@@ -39,7 +41,8 @@
     "length": "39.5 m",
     "wingspan": "35.8 m",
     "height": "12.5 m",
-    "imageUrl": "https://photos.flightaware.com/photos/retriever/f44c8d4cb1cd46e0a64a082179bd1ea447835371"
+    "imageUrl": "https://photos.flightaware.com/photos/retriever/f44c8d4cb1cd46e0a64a082179bd1ea447835371",
+    "model3dUrl": "../data/3d-models/Airplane_BG367_B777.glb"
   },
   {
     "callSign": "IGO1113",
@@ -53,7 +56,8 @@
     "length": "37.57 m",
     "wingspan": "35.8 m",
     "height": "11.76 m",
-    "imageUrl": "https://cdn.airnavradar.com/photo/VT-IPG-1747892570-0.jpg"
+    "imageUrl": "https://cdn.airnavradar.com/photo/VT-IPG-1747892570-0.jpg",
+    "model3dUrl": "../data/3d-models/Airplane_IGO1113_A320.glb"
   },
   {
     "callSign": "QR638",
@@ -67,7 +71,8 @@
     "length": "63.66 m",
     "wingspan": "60.3 m",
     "height": "16.83 m",
-    "imageUrl": "https://photo-serve.planefinder.net/remote/lh3.googleusercontent.com/atDArDyyyGceIAFEOdHdNqod52dhVnFVYOj-S3XfewOno-JJ3pQcyp-RIjYixrBQM-VOIP_MOcuTZm9wlDh240h8SR7CAfVXkduvVw"
+    "imageUrl": "https://photo-serve.planefinder.net/remote/lh3.googleusercontent.com/atDArDyyyGceIAFEOdHdNqod52dhVnFVYOj-S3XfewOno-JJ3pQcyp-RIjYixrBQM-VOIP_MOcuTZm9wlDh240h8SR7CAfVXkduvVw",
+    "model3dUrl": "../data/3d-models/Airplane_QR638_A330.glb"
   },
   {
     "callSign": "CX667",
@@ -81,7 +86,8 @@
     "length": "66.8 m",
     "wingspan": "64.8 m",
     "height": "17.05 m",
-    "imageUrl": "https://content.r9cdn.net/rimg/dimg/2a/f6/19f4606f-al-CX-165582db19f.jpg?width=1366&height=768&xhint=1686&yhint=955&crop=true"
+    "imageUrl": "https://content.r9cdn.net/rimg/dimg/2a/f6/19f4606f-al-CX-165582db19f.jpg?width=1366&height=768&xhint=1686&yhint=955&crop=true",
+    "model3dUrl": "../data/3d-models/Airplane_CX667_A330.glb"
   },
   {
     "callSign": "SQ446",
@@ -95,7 +101,8 @@
     "length": "66.8 m",
     "wingspan": "64.8 m",
     "height": "17.05 m",
-    "imageUrl": "https://photos.flightaware.com/photos/retriever/698da7f9e842e3c9f25f96052ec821a5b9610d70"
+    "imageUrl": "https://photos.flightaware.com/photos/retriever/698da7f9e842e3c9f25f96052ec821a5b9610d70",
+    "model3dUrl": "../data/3d-models/Airplane_SQ446_B777.glb"
   },
   {
     "callSign": "BG602",
@@ -109,7 +116,8 @@
     "length": "56.7 m",
     "wingspan": "60.1 m",
     "height": "16.9 m",
-    "imageUrl": "https://photos.flightaware.com/photos/retriever/9ac9dc7af9864800d2f6c69dfba07f2cc75db97d"
+    "imageUrl": "https://photos.flightaware.com/photos/retriever/9ac9dc7af9864800d2f6c69dfba07f2cc75db97d",
+    "model3dUrl": "../data/3d-models/Airplane A320.glb"
   },
   {
     "callSign": "BG492",
@@ -123,7 +131,8 @@
     "length": "46.66 m",
     "wingspan": "43.9 m",
     "height": "15.8 m",
-    "imageUrl": "https://photos.flightaware.com/photos/retriever/a9f3b3894c3b47d2e1a7b21c3fa2a76509a0238d"
+    "imageUrl": "https://photos.flightaware.com/photos/retriever/a9f3b3894c3b47d2e1a7b21c3fa2a76509a0238d",
+    "model3dUrl": "../data/3d-models/Airplane A320.glb"
   },
   {
     "callSign": "BG472",
@@ -137,7 +146,8 @@
     "length": "39.5 m",
     "wingspan": "35.8 m",
     "height": "12.5 m",
-    "imageUrl": "https://photos.flightaware.com/photos/retriever/d08396b5440316637bd27ca0216288e1af789ea3"
+    "imageUrl": "https://photos.flightaware.com/photos/retriever/d08396b5440316637bd27ca0216288e1af789ea3",
+    "model3dUrl": "../data/3d-models/Airplane A320.glb"
   },
   {
     "callSign": "NVQ946",
@@ -151,7 +161,8 @@
     "length": "27.17 m",
     "wingspan": "27.05 m",
     "height": "7.65 m",
-    "imageUrl": "https://t.plnspttrs.net/44889/1710986_584c762550_280.jpg"
+    "imageUrl": "https://t.plnspttrs.net/44889/1710986_584c762550_280.jpg",
+    "model3dUrl": "../data/3d-models/Airplane_NVQ946_ATR72.glb"
   },
   {
     "callSign": "AWA446",
@@ -165,7 +176,8 @@
     "length": "36.45 m",
     "wingspan": "28.9 m",
     "height": "11.13 m",
-    "imageUrl": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/d1/9f/d1/air-austral.jpg?w=1200&h=-1&s=1"
+    "imageUrl": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/d1/9f/d1/air-austral.jpg?w=1200&h=-1&s=1",
+    "model3dUrl": "../data/3d-models/Airplane_AWA446_ATR72.glb"
   },
   {
     "callSign": "UBG108",
@@ -179,7 +191,8 @@
     "length": "39.5 m",
     "wingspan": "35.8 m",
     "height": "12.5 m",
-    "imageUrl": "https://ivtrip.implevista.com/wp-content/uploads/2024/03/us-bangla-airlines.webp"
+    "imageUrl": "https://ivtrip.implevista.com/wp-content/uploads/2024/03/us-bangla-airlines.webp",
+    "model3dUrl": "../data/3d-models/Airplane_UBG108_ATR72.glb"
   },
   {
     "callSign": "GFN391",
@@ -193,7 +206,8 @@
     "length": "17.32 m",
     "wingspan": "11.36 m",
     "height": "4.73 m",
-    "imageUrl": "https://cdn.plnspttrs.net/37608/36507-bangladesh-air-force-mikoyan-gurevich-mig-29-fulcrum-a_PlanespottersNet_1311971_0e2de91067_o.jpg"
+    "imageUrl": "https://cdn.plnspttrs.net/37608/36507-bangladesh-air-force-mikoyan-gurevich-mig-29-fulcrum-a_PlanespottersNet_1311971_0e2de91067_o.jpg",
+    "model3dUrl": "../data/3d-models/Airplane A320.glb"
   },
   {
     "callSign": "BJR471",
@@ -207,7 +221,8 @@
     "length": "14.88 m",
     "wingspan": "8.32 m",
     "height": "4.11 m",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Bangladesh_Air_Force_Chengdu_F-7_BG_934_Landing_%288174016955%29.jpg"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Bangladesh_Air_Force_Chengdu_F-7_BG_934_Landing_%288174016955%29.jpg",
+    "model3dUrl": "../data/3d-models/Airplane A320.glb"
   },
   {
     "callSign": "UNC1031",
@@ -221,7 +236,8 @@
     "length": "23.78 m",
     "wingspan": "29.2 m",
     "height": "8.75 m",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ac/S3-ACB_Bangladesh_Air_Force_Antonov_An-32._%2834733811450%29.jpg"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ac/S3-ACB_Bangladesh_Air_Force_Antonov_An-32._%2834733811450%29.jpg",
+    "model3dUrl": "../data/3d-models/Airplane A320.glb"
   },
   {
     "callSign": "AJX1483",
@@ -235,7 +251,8 @@
     "length": "34.4 m",
     "wingspan": "40.4 m",
     "height": "11.8 m",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/C-130J_135th_AS_Maryland_ANG_in_flight.jpg/1280px-C-130J_135th_AS_Maryland_ANG_in_flight.jpg"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/C-130J_135th_AS_Maryland_ANG_in_flight.jpg/1280px-C-130J_135th_AS_Maryland_ANG_in_flight.jpg",
+    "model3dUrl": "../data/3d-models/Airplane A320.glb"
   },
   {
     "callSign": "S2AGP",
@@ -249,7 +266,8 @@
     "length": "12.7 m",
     "wingspan": "10.97 m",
     "height": "4.04 m",
-    "imageUrl": "https://www.stanstednews.com/gallery_2022/21360.jpg"
+    "imageUrl": "https://www.stanstednews.com/gallery_2022/21360.jpg",
+    "model3dUrl": "../data/3d-models/Airplane A320.glb"
   },
   {
     "callSign": "PT6",
@@ -263,7 +281,8 @@
     "length": "???",
     "wingspan": "???",
     "height": "???",
-    "imageUrl": "https://imgproc.airliners.net/photos/airliners/7/6/2/4286267.jpg?v=v4500e61f89d"
+    "imageUrl": "https://imgproc.airliners.net/photos/airliners/7/6/2/4286267.jpg?v=v4500e61f89d",
+    "model3dUrl": "../data/3d-models/Airplane A320.glb"
   },
   {
     "callSign": "GROB 120tp",
@@ -277,7 +296,8 @@
     "length": "???",
     "wingspan": "???",
     "height": "???",
-    "imageUrl": "https://live.staticflickr.com/65535/52177415528_929c82eae9_h.jpg"
+    "imageUrl": "https://live.staticflickr.com/65535/52177415528_929c82eae9_h.jpg",
+    "model3dUrl": "../data/3d-models/Airplane A320.glb"
   },
   {
     "callSign": "AW 119",
@@ -291,7 +311,8 @@
     "length": "12.9 m",
     "wingspan": "10.83 m",
     "height": "3.6 m",
-    "imageUrl": "https://pbs.twimg.com/media/GXF-ivkbEAEvhh4?format=jpg&name=medium"
+    "imageUrl": "https://pbs.twimg.com/media/GXF-ivkbEAEvhh4?format=jpg&name=medium",
+    "model3dUrl": "../data/3d-models/Airplane A320.glb"
   },
   {
     "callSign": "K-8",
@@ -305,7 +326,8 @@
     "length": "11.6 m",
     "wingspan": "9.63 m",
     "height": "4.21 m",
-    "imageUrl": "https://d1a2ot8agkqe8w.cloudfront.net/web/2014/12/k-8-bangladesh-airteamimages_58922.jpg"
+    "imageUrl": "https://d1a2ot8agkqe8w.cloudfront.net/web/2014/12/k-8-bangladesh-airteamimages_58922.jpg",
+    "model3dUrl": "../data/3d-models/Airplane A320.glb"
   },
   {
     "callSign": "BELL 206",
@@ -319,6 +341,7 @@
     "length": "13.03 m",
     "wingspan": "11.28 m",
     "height": "3.51 m",
-    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Bangladesh_Air_Force_Bell-206_%283%29.jpg/960px-Bangladesh_Air_Force_Bell-206_%283%29.jpg?20180825102224"
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Bangladesh_Air_Force_Bell-206_%283%29.jpg/960px-Bangladesh_Air_Force_Bell-206_%283%29.jpg?20180825102224",
+    "model3dUrl": "../data/3d-models/Airplane A320.glb"
   }
 ]

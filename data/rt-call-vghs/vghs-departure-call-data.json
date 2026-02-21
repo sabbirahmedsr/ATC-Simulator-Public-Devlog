@@ -159,7 +159,7 @@
     "description": "This is a specific call made by a military pilot to the ground controller to request permission to move the plane on the ground from the gate to the runway, following a designated route for military aircraft.",
     "calls": [
       { "speaker": "Pilot", "message": "{DHK GND} {Call Sign}, request taxi" },
-      { "speaker": "GRD", "message": "{Call Sign}, {taxi via NA / taxi via NA-P} to holding point runway-14, {QNH 760}, SQUAWK 4771" },
+      { "speaker": "GRD", "message": "{Call Sign}, {taxi via NA / taxi via NA-P} to holding point runway-14, {QNH 760}, SQUAWK 4141" },
       { "speaker": "Pilot", "message": "{QNH 760}, SQUAWK 4141, {taxi via NA / taxi via NA-P} to holding point runway-14 {Call Sign}" }
     ],
     "callsigns": [ "GFN391", "BJR471", "UNC1031", "AJX1483" ]
@@ -235,8 +235,8 @@
     "description": "A pilot makes this call to the tower controller to get permission to move onto the runway and prepare for takeoff to fly a local circuit (a repeating pattern of flight around the airport).",
     "calls": [
       { "speaker": "Pilot", "message": "{DHK TWR} {Call Sign}, approaching holding point runway 14, Request line up for cct" },
-      { "speaker": "TWR", "message": "{Call Sign}, circuite approved line up runway 14, report ready for departure" },
-      { "speaker": "Pilot", "message": "lining up runway 14 for circuite, call you ready for departure {Call Sign}" }
+      { "speaker": "TWR", "message": "{Call Sign}, circuit approved line up runway 14, report ready for departure" },
+      { "speaker": "Pilot", "message": "lining up runway 14 for circuit, call you ready for departure {Call Sign}" }
     ],
     "callsigns": [ "GFN391", "BJR471", "UNC1031", "AJX1483" ]
   },
@@ -259,6 +259,17 @@
       { "speaker": "Pilot", "message": "{DHK TWR} {Call Sign}, holding point runway 14, Request line up for training area north" },
       { "speaker": "TWR", "message": "{Call Sign}, line up runway 14 for training area north, report ready for departure" },
       { "speaker": "Pilot", "message": "lining up runway 14 for trg area north, call you ready for departure {Call Sign}" }
+    ],
+    "callsigns": [ "GFN391", "BJR471", "UNC1031", "AJX1483" ]
+  },
+  {
+    "phase": "departure_mil",
+    "category": "Military Tower",
+    "description": "A military pilot confirms they are ready for takeoff and receives final clearance from the tower.",
+    "calls": [
+      { "speaker": "Pilot", "message": "{DHK TWR} {Call Sign}, ready for Departure" },
+      { "speaker": "TWR", "message": "{Call Sign}, surface wind 260/60kts, cleared for takeoff runway 14" },
+      { "speaker": "Pilot", "message": "S/W copied, runway 14, cleared for takeoff {Call Sign}" }
     ],
     "callsigns": [ "GFN391", "BJR471", "UNC1031", "AJX1483" ]
   },
