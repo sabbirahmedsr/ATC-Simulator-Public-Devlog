@@ -207,7 +207,7 @@
     "wingspan": "11.36 m",
     "height": "4.73 m",
     "imageUrl": "https://cdn.plnspttrs.net/37608/36507-bangladesh-air-force-mikoyan-gurevich-mig-29-fulcrum-a_PlanespottersNet_1311971_0e2de91067_o.jpg",
-    "model3dUrl": "../data/3d-models/Airplane A320.glb"
+    "model3dUrl": "../data/3d-models/Airplane_GFN391_MIG29.glb"
   },
   {
     "callSign": "BJR471",
@@ -222,7 +222,7 @@
     "wingspan": "8.32 m",
     "height": "4.11 m",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1a/Bangladesh_Air_Force_Chengdu_F-7_BG_934_Landing_%288174016955%29.jpg",
-    "model3dUrl": "../data/3d-models/Airplane A320.glb"
+    "model3dUrl": "../data/3d-models/Airplane_BJR471_F7BG.glb"
   },
   {
     "callSign": "UNC1031",
@@ -237,7 +237,7 @@
     "wingspan": "29.2 m",
     "height": "8.75 m",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ac/S3-ACB_Bangladesh_Air_Force_Antonov_An-32._%2834733811450%29.jpg",
-    "model3dUrl": "../data/3d-models/Airplane A320.glb"
+    "model3dUrl": "../data/3d-models/Airplane_UNC1031_AN32.glb"
   },
   {
     "callSign": "AJX1483",
@@ -252,7 +252,7 @@
     "wingspan": "40.4 m",
     "height": "11.8 m",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/C-130J_135th_AS_Maryland_ANG_in_flight.jpg/1280px-C-130J_135th_AS_Maryland_ANG_in_flight.jpg",
-    "model3dUrl": "../data/3d-models/Airplane A320.glb"
+    "model3dUrl": "../data/3d-models/Airplane_AJX1483_C130J.glb"
   },
   {
     "callSign": "S2AGP",
@@ -267,7 +267,7 @@
     "wingspan": "10.97 m",
     "height": "4.04 m",
     "imageUrl": "https://www.stanstednews.com/gallery_2022/21360.jpg",
-    "model3dUrl": "../data/3d-models/Airplane A320.glb"
+    "model3dUrl": "../data/3d-models/Airplane_S2AGP_R66.glb"
   },
   {
     "callSign": "PT6",
