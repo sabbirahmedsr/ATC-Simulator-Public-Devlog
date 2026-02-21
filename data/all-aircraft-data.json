@@ -117,7 +117,7 @@
     "wingspan": "60.1 m",
     "height": "16.9 m",
     "imageUrl": "https://photos.flightaware.com/photos/retriever/9ac9dc7af9864800d2f6c69dfba07f2cc75db97d",
-    "model3dUrl": "../data/3d-models/Airplane A320.glb"
+    "model3dUrl": "../data/3d-models/Airplane_BG602_Dash8Q.glb"
   },
   {
     "callSign": "BG492",
@@ -132,7 +132,7 @@
     "wingspan": "43.9 m",
     "height": "15.8 m",
     "imageUrl": "https://photos.flightaware.com/photos/retriever/a9f3b3894c3b47d2e1a7b21c3fa2a76509a0238d",
-    "model3dUrl": "../data/3d-models/Airplane A320.glb"
+    "model3dUrl": "../data/3d-models/Airplane_BG492_Dash8Q.glb"
   },
   {
     "callSign": "BG472",
@@ -147,7 +147,7 @@
     "wingspan": "35.8 m",
     "height": "12.5 m",
     "imageUrl": "https://photos.flightaware.com/photos/retriever/d08396b5440316637bd27ca0216288e1af789ea3",
-    "model3dUrl": "../data/3d-models/Airplane A320.glb"
+    "model3dUrl": "../data/3d-models/Airplane_BG472_Dash8Q.glb"
   },
   {
     "callSign": "NVQ946",
