@@ -282,7 +282,7 @@
     "wingspan": "???",
     "height": "???",
     "imageUrl": "https://imgproc.airliners.net/photos/airliners/7/6/2/4286267.jpg?v=v4500e61f89d",
-    "model3dUrl": "../data/3d-models/Airplane A320.glb"
+    "model3dUrl": "../data/3d-models/Airplane_VGJR_PT6.glb"
   },
   {
     "callSign": "GROB 120tp",
@@ -297,7 +297,7 @@
     "wingspan": "???",
     "height": "???",
     "imageUrl": "https://live.staticflickr.com/65535/52177415528_929c82eae9_h.jpg",
-    "model3dUrl": "../data/3d-models/Airplane A320.glb"
+    "model3dUrl": "../data/3d-models/Airplane_VGJR_G120TP.glb"
   },
   {
     "callSign": "AW 119",
@@ -312,7 +312,7 @@
     "wingspan": "10.83 m",
     "height": "3.6 m",
     "imageUrl": "https://pbs.twimg.com/media/GXF-ivkbEAEvhh4?format=jpg&name=medium",
-    "model3dUrl": "../data/3d-models/Airplane A320.glb"
+    "model3dUrl": "../data/3d-models/Airplane_VGJR_AW119.glb"
   },
   {
     "callSign": "K-8",
@@ -327,7 +327,7 @@
     "wingspan": "9.63 m",
     "height": "4.21 m",
     "imageUrl": "https://d1a2ot8agkqe8w.cloudfront.net/web/2014/12/k-8-bangladesh-airteamimages_58922.jpg",
-    "model3dUrl": "../data/3d-models/Airplane A320.glb"
+    "model3dUrl": "../data/3d-models/Airplane_VGJR_K8.glb"
   },
   {
     "callSign": "BELL 206",
@@ -342,6 +342,6 @@
     "wingspan": "11.28 m",
     "height": "3.51 m",
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Bangladesh_Air_Force_Bell-206_%283%29.jpg/960px-Bangladesh_Air_Force_Bell-206_%283%29.jpg?20180825102224",
-    "model3dUrl": "../data/3d-models/Airplane A320.glb"
+    "model3dUrl": "../data/3d-models/Airplane_VGJR_Bell206.glb"
   }
 ]
