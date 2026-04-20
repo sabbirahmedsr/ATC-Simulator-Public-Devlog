@@ -2,25 +2,608 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
-    <title>RT Call Log</title>    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RT Call - V2</title>    
     <link rel="icon" href="../image/fav-icon.png" type="image/png">
-    <link rel="stylesheet" href="../css/global-styles.css">
-    <link rel="stylesheet" href="../css/rt-call-style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/rt-call-style-v2.css">
 </head>
 <body>
-    <div class="page-container">
-        <aside id="nav-panel">
-            <div id="category-filter-container"></div>
-            <div id="phase-list-container"></div>
-        </aside>
-        <main class="main-content">
-            <h1>Dynamic Title Here</h1>
-            <div class="communication-table-container">
-            </div>
-        </main>
+
+    <div class="header-container">
+        <h1>ATC Simulator - RT Calls (V2)</h1>
+        <div class="header-btn-group">
+            <button id="params-btn" title="View All Parameters"><i class="fa-solid fa-code"></i></button>
+            <button id="help-btn" title="Recording Instructions"><i class="fa-solid fa-microphone"></i></button>
+            <button id="print-btn" title="Print as PDF"><i class="fa-solid fa-print"></i></button>
+        </div>
     </div>
-    <script src="../js/rt-call-script.js"></script>
+
+    <div class="filter-container">
+        <div class="filter-group">
+            <label>Airport:</label>
+            <button class="filter-btn active" data-filter-group="icao" data-filter-value="vghs">VGHS</button>
+            <button class="filter-btn" data-filter-group="icao" data-filter-value="vgjr">VGJR</button>
+        </div>
+        <div class="filter-group">
+            <label for="callsign-filter">Call Sign:</label>
+            <div class="aircraft-select-wrapper">
+                <select id="callsign-filter">
+                    <option value="all">All</option>
+                </select>
+            </div>
+        </div>
+        <div class="filter-group">
+            <label>Type:</label>
+            <button class="filter-btn active" data-filter-group="type" data-filter-value="arrival">Arrival</button>
+            <button class="filter-btn" data-filter-group="type" data-filter-value="departure">Departure</button>
+            <button class="filter-btn" data-filter-group="type" data-filter-value="circuit">Circuit</button>
+        </div>
+        <div class="filter-group">
+            <label>View:</label>
+            <button id="toggle-callsigns-btn" class="filter-btn active" title="Show/Hide Call Signs beside cards">Show Call Signs</button>
+        </div>
+    </div>
+
+    <div id="rt-call-container">
+        <!-- RT Calls will be loaded here -->
+    </div>
+
+    <!-- Help/Instructions Popup -->
+    <div class="popup-overlay" id="help-popup">
+        <div class="popup-content">
+            <h3>Voice-Over Recording Instructions</h3>
+            <ul class="instruction-list">
+                <li><strong>Environment Quality:</strong> Ensure the recording environment is as quiet and echo-free as possible. Eliminate background noise to guarantee clear, high-quality audio.</li>
+                <li class="highlight-instruction"><strong>5-Second Silence Rule:</strong> Before starting a new set of RT calls (i.e., a new card), leave at least <strong>5 seconds of silence</strong>. This creates clean separation between different scenarios.</li>
+                <li><strong>Standalone Delivery:</strong> Treat each line as a completely fresh and separate radio call. Avoid any conversational flow or carrying the tone over from the previous line. Start fresh every time.</li>
+                <li class="highlight-instruction"><strong>Pause for Variables:</strong> For any text inside <code>{curly brackets}</code>, you must pause for about <strong>half a second (0.5s)</strong> both before and after reading the variable text. This is critical for editing.</li>
+                <li><strong>Record Full Sentence Every Time:</strong> When a line contains a variable (e.g., <code>{QNH 1013}</code>), you must record the <strong>entire sentence</strong> for <strong>every variable call phrase</strong>. Do not record just the variable part. This applies to both the main RT calls and the parameter lists.</li>
+                <li><strong>Clarity and Consistency:</strong> Enunciate every word clearly, especially the first and last words of a phrase. Maintain a consistent volume and a formal, professional tone throughout the entire recording session.</li>
+                <li><strong>Recording Individual Digits:</strong> For parameters like <code>Time</code> or <code>Stand Number</code>, you must record each digit from <strong>0 to 9</strong> as a separate, standalone audio file. Say "Zero," "One," "Two," etc., with a clean start and end, no conversational flow. This allows us to create any number dynamically.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Parameters Popup -->
+    <div class="popup-overlay" id="params-popup">
+        <div class="popup-content">
+            <h3>Parameters in Context</h3>
+            <div id="params-content-container">
+                <!-- Parameters will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Container for printing RT calls, hidden by default -->
+    <div id="print-rt-call-container"></div>
+
+    <!-- Container for printing parameters, hidden by default -->
+    <div id="print-params-container"></div>
+
+    <!-- Container for printing instructions, hidden by default -->
+    <div id="print-instructions-container"></div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mainTitle = document.querySelector('h1');
+            const container = document.getElementById('rt-call-container');
+            const callsignFilter = document.getElementById('callsign-filter');
+            let allRtCallData = []; // To store all fetched data
+            let allParameters = {}; // To store parameter data
+            let nonCivilCallsigns = new Set();
+
+            async function fetchAllData() {
+                const urlParams = new URLSearchParams(window.location.search);
+                let icaoParam = urlParams.get('icao');
+
+                // Default to 'vghs' if no parameter is provided
+                if (!icaoParam || (icaoParam !== 'vghs' && icaoParam !== 'vgjr')) {
+                    icaoParam = 'vghs';
+                }
+
+                const dataPath = `../data/rt-call-${icaoParam}`;
+
+                // Update filter buttons based on URL param
+                const icaoButtons = document.querySelectorAll('.filter-btn[data-filter-group="icao"]');
+                icaoButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.dataset.filterValue === icaoParam) {
+                        btn.classList.add('active');
+                    }
+                });
+
+                // Construct file names with the ICAO prefix
+                const filesToFetch = [
+                    `${dataPath}/${icaoParam}-arrival-call-data.json`,
+                    `${dataPath}/${icaoParam}-departure-call-data.json`,
+                    `${dataPath}/${icaoParam}-circuit-call-data.json`
+                ];
+
+                try {
+                    const filePromises = filesToFetch.map(fileUrl => {
+                        const type = fileUrl.split('/').pop().split('-')[1]; // 'arrival', 'departure', etc.
+                        return fetch(fileUrl)
+                            .then(res => {
+                                if (!res.ok) return []; // If a file doesn't exist, return an empty array
+                                return res.json().then(data => data.map(item => ({ ...item, type })));
+                            })
+                            .catch(() => []); // On network error, also return an empty array
+                    });
+
+                    // Also fetch the parameters file
+                    const paramsPromise = fetch(`${dataPath}/${icaoParam}-parameter-data.json`)
+                        .then(res => res.ok ? res.json() : {})
+                        .catch(() => ({}));
+
+                    const [results, paramsData] = await Promise.all([Promise.all(filePromises), paramsPromise]);
+                    
+                    allRtCallData = results.flat(); // Flatten the array of arrays
+                    allParameters = paramsData; // Store parameters
+                    populateCallsignFilter();
+                    renderCalls();
+                } catch (error) {
+                    console.error('Error processing RT call data:', error);
+                    container.innerHTML = '<p style="text-align:center;">Error: Could not process RT call data.</p>';
+                }
+            }
+
+            function populateCallsignFilter() {
+                const activeIcao = document.querySelector('.filter-btn[data-filter-group="icao"].active').dataset.filterValue;
+                const callsignSelect = document.getElementById('callsign-filter');
+
+                nonCivilCallsigns.clear();
+
+                const callsignDataByIcao = {
+                    vghs: {
+                        "Civil International": ["THAI321", "EK584", "IGO1113", "BG367", "QR638", "CX667", "SQ446"],
+                        "Civil Domestic": [ "BG602", "BG492", "BG472", "NVQ946", "AWA446", "UBG108" ],
+                        "Military Transport": ["UNC1031", "AJX1483", ],
+                        "Military Jet": ["GFN391", "BJR471"],
+                        "Helicopter": ["S2AGP"]
+                    },
+                    vgjr: {
+                        "CIVIL": ["ATR72"],
+                        "Military Jet": ["RVN_592"],
+                        "Military Trainer": ["ABC_667", "CSP_743"],
+                        "Helicopter": ["RNG_1171", "RNG_1172"]
+                    }
+                };
+
+
+                callsignSelect.innerHTML = '<option value="all">All</option>'; // Reset with "All" option
+
+                const callsignGroups = callsignDataByIcao[activeIcao] || {};
+
+                for (const groupName in callsignGroups) {
+                    const optgroup = document.createElement('optgroup');
+                    optgroup.label = groupName;
+
+                    if (!groupName.toLowerCase().includes('civil')) {
+                        callsignGroups[groupName].forEach(cs => nonCivilCallsigns.add(cs));
+                    }
+
+                    callsignGroups[groupName].forEach(callsign => {
+                        const option = document.createElement('option');
+                        option.value = callsign;
+                        option.textContent = callsign;
+                        optgroup.appendChild(option);
+                    });
+
+                    callsignSelect.appendChild(optgroup);
+                }
+            }
+
+            function formatMessageWithVariables(message, activeCallsign) {
+                // The activeCallsign here refers to the *selected filter value*, not necessarily the displayed one.
+                // A list of variables that should have the subtle style.
+                // We include "call-sign" as it's the generic placeholder when "All" is selected.
+                const subtleVariables = ["Call Sign", "call-sign", "DHK TWR", "DHK GRD", "DHK GND", "JSR TWR", "JSR GRD"];
+
+                return message.replace(/{([^}]+)}/g, (match, variableName) => {
+                    // Trim the variable name to be safe
+                    const trimmedVar = variableName.trim();
+
+                    // Check if the variable name is in our subtle list
+                    if (subtleVariables.includes(trimmedVar) || trimmedVar === activeCallsign) {
+                        // Apply the subtle class
+                        return `<span class="variable-subtle">${match}</span>`;
+                    } else {
+                        // Apply the high-contrast class for all other variables
+                        return `<span class="variable-contrast">${match}</span>`;
+                    }
+                });
+            }
+
+            function renderCalls() {
+                container.innerHTML = ''; // Clear previous results
+
+                const activeType = document.querySelector('.filter-btn[data-filter-group="type"].active').dataset.filterValue;
+                const activeIcao = document.querySelector('.filter-btn[data-filter-group="icao"].active').dataset.filterValue;
+                const activeCallsign = callsignFilter.value;
+                const showCallsigns = document.getElementById('toggle-callsigns-btn').classList.contains('active');
+
+                // --- Update Main Title ---
+                const displayType = activeType.charAt(0).toUpperCase() + activeType.slice(1);
+                const callsignForTitle = (activeCallsign === 'all') ? 'call-sign' : activeCallsign;
+                mainTitle.textContent = `${activeIcao.toUpperCase()} - {${callsignForTitle}} - ${displayType} - RT CALL`;
+                // --- End Title Update ---
+
+                const baseFilteredData = allRtCallData.filter(data => {
+                    const typeMatch = data.type === activeType;
+                    const icaoMatch = true; // ICAO is filtered by folder, so this is always true here.
+
+                    // --- New Callsign Filtering Logic ---
+                    let callsignMatch = false;
+                    if (activeCallsign === 'all') {
+                        callsignMatch = true; // Always show if "All" is selected.
+                    } else {
+                        // Only show if the call's list includes the active callsign.
+                        callsignMatch = data.callsigns && data.callsigns.includes(activeCallsign);
+                    }
+
+                    return typeMatch && icaoMatch && callsignMatch;
+                });
+
+                // Group the filtered data by category
+                const groupedByCategory = baseFilteredData.reduce((acc, call) => {
+                    const category = call.category || 'Uncategorized';
+                    if (!acc[category]) {
+                        acc[category] = [];
+                    }
+                    acc[category].push(call);
+                    return acc;
+                }, {});
+
+                // Get the unique categories while preserving the order from the source file
+                const orderedCategories = [];
+                const categorySet = new Set();
+                baseFilteredData.forEach(call => {
+                    const category = call.category || 'Uncategorized';
+                    if (!categorySet.has(category)) {
+                        categorySet.add(category);
+                        orderedCategories.push(category);
+                    }
+                });
+
+                if (orderedCategories.length === 0) {
+                    container.innerHTML = '<p style="text-align:center;">No matching RT calls found.</p>';
+                    return;
+                }
+
+                const createCard = (data, index) => {
+                    const wrapper = document.createElement('div');
+                    wrapper.className = 'rt-card-wrapper';
+
+                    const card = document.createElement('div');
+                    card.className = 'rt-card';
+
+                    // Dynamically replace placeholders based on the selected airport
+                    const processedCalls = data.calls.map(call => {
+                        let { speaker, message } = call;
+                        const genericCallsignRegex = /{call-sign}|{Call Sign}/gi;
+
+                        if (activeIcao === 'vghs') {
+                            message = message.replace(/{GRD}|{GND}/g, '{DHK GRD}').replace(/{TWR}/g, '{DHK TWR}');
+                        } else if (activeIcao === 'vgjr') {
+                            message = message.replace(/{GRD}|{GND}/g, '{JSR GRD}').replace(/{TWR}/g, '{JSR TWR}');
+                        }
+                        // Replace the generic placeholder with the active callsign.
+                        // If 'all' is selected, use a generic placeholder text.
+                        const callsignToDisplay = (activeCallsign === 'all') ? 'call-sign' : activeCallsign;
+                        message = message.replace(genericCallsignRegex, `{${callsignToDisplay}}`); // This handles both {Call Sign} and {call-sign}
+
+                        return { speaker, message: formatMessageWithVariables(message, activeCallsign) };
+                    });
+
+                    const dialogueRows = processedCalls.map(call => `
+                        <div class="call-row" data-speaker="${call.speaker}">
+                            <span class="speaker">${call.speaker}:</span>
+                            <p class="call-text">${call.message || '...'}</p>
+                        </div>
+                    `).join('');
+
+                    const descPopupId = `desc-popup-${index}`;
+
+                    const callsignsHtml = data.callsigns && data.callsigns.length > 0
+                        ? data.callsigns.map(cs => `<span class="popup-callsign-tag">${cs}</span>`).join('')
+                        : '<span class="popup-callsign-tag na">Not yet assigned</span>';
+
+
+                    card.innerHTML = `
+                        <div class="details-btn-container">
+                            <button class="details-btn" data-popup-target="#${descPopupId}" title="View Details">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+                        </div>
+                        <div class="phase-column" data-popup-target="#${descPopupId}" title="View Details">
+                            <h2>${(data.phase || 'N/A').replace(/_/g, ' ')}</h2>
+                        </div>
+                        <div class="dialogue-column">${dialogueRows}</div>
+                        <div class="popup-overlay" id="${descPopupId}">
+                            <div class="popup-content">
+                                <h3 style="text-transform: capitalize;">${(data.phase || 'Description').replace(/_/g, ' ')}</h3>
+                                <p>${data.description || 'No description available.'}</p>
+                                <h3 class="popup-section-header">Applicable Call Signs</h3>
+                                <div class="popup-callsigns-container">
+                                    ${callsignsHtml}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    
+                    wrapper.appendChild(card);
+
+                    if (showCallsigns && data.callsigns && data.callsigns.length > 0) {
+                        const sidePanel = document.createElement('div');
+                        sidePanel.className = 'rt-side-panel';
+                        sidePanel.innerHTML = data.callsigns.map(cs => {
+                            const className = nonCivilCallsigns.has(cs) ? 'military' : '';
+                            return `<div class="${className}">${cs}</div>`;
+                        }).join('');
+                        wrapper.appendChild(sidePanel);
+                    }
+
+                    container.appendChild(wrapper);
+                };
+
+                let globalIndex = 0;
+                orderedCategories.forEach(category => {
+                    const categoryHeader = document.createElement('h3');
+                    categoryHeader.className = 'category-header';
+                    categoryHeader.textContent = category.toUpperCase();
+                    container.appendChild(categoryHeader);
+
+                    const callsInCategory = groupedByCategory[category];
+                    callsInCategory.forEach(callData => {
+                        createCard(callData, globalIndex++);
+                    });
+                });
+            }
+
+            function prepareRtCallsForPrint() {
+                const printContainer = document.getElementById('print-rt-call-container');
+                printContainer.innerHTML = ''; // Clear previous content
+
+                const activeIcao = document.querySelector('.filter-btn[data-filter-group="icao"].active').dataset.filterValue;
+                const activeCallsign = callsignFilter.value || 'call-sign';
+
+                const callTypesToPrint = ['arrival', 'departure', 'circuit'];
+
+                callTypesToPrint.forEach(callType => {
+                    const callsignForTitle = (activeCallsign === 'all') ? 'call-sign' : activeCallsign;
+                    const typeFilteredData = allRtCallData.filter(data => {
+                        const typeMatch = data.type === callType;
+                        let callsignMatch = true;
+                        if (activeCallsign !== 'all') {
+                            callsignMatch = data.callsigns && data.callsigns.includes(activeCallsign);
+                        }
+                        return typeMatch && callsignMatch;
+                    });
+
+                    if (typeFilteredData.length > 0) {
+                        // Add a main header for the call type (e.g., "Arrival Calls")
+                        const typeHeader = document.createElement('h1');
+                        
+                        // --- Create dynamic page title for print ---
+                        const displayType = callType.charAt(0).toUpperCase() + callType.slice(1);
+                        const pageTitle = `${activeIcao.toUpperCase()} - {${callsignForTitle}} - ${displayType} - RT CALL`;
+                        typeHeader.textContent = pageTitle;
+                        // --- End title creation ---
+
+                        // Start each new section on a new page
+                        typeHeader.style.pageBreakBefore = 'always'; 
+                        if (callType === 'arrival') {
+                            typeHeader.style.pageBreakBefore = 'auto'; // Don't break before the very first one
+                        }
+                        printContainer.appendChild(typeHeader);
+
+                        const groupedByCategory = typeFilteredData.reduce((acc, call) => {
+                            const category = call.category || 'Uncategorized';
+                            if (!acc[category]) acc[category] = [];
+                            acc[category].push(call);
+                            return acc;
+                        }, {});
+
+                        const orderedCategories = [];
+                        const categorySet = new Set();
+                        typeFilteredData.forEach(call => {
+                            const category = call.category || 'Uncategorized';
+                            if (!categorySet.has(category)) {
+                                categorySet.add(category);
+                                orderedCategories.push(category);
+                            }
+                        });
+
+                        orderedCategories.forEach(category => {
+                            const categoryHeader = document.createElement('h3');
+                            categoryHeader.className = 'category-header';
+                            categoryHeader.textContent = category.toUpperCase();
+                            printContainer.appendChild(categoryHeader);
+
+                            groupedByCategory[category].forEach(data => {
+                                const card = document.createElement('div');
+                                card.className = 'rt-card';
+
+                                const processedCalls = data.calls.map(call => {
+                                    let { speaker, message } = call;
+                                    const callsignRegex = /{call-sign}|{Call Sign}/gi;
+                                    if (activeIcao === 'vghs') {
+                                        message = message.replace(/{GRD}|{GND}/g, '{DHK GRD}').replace(/{TWR}/g, '{DHK TWR}');
+                                    } else if (activeIcao === 'vgjr') {
+                                        message = message.replace(/{GRD}|{GND}/g, '{JSR GRD}').replace(/{TWR}/g, '{JSR TWR}');                                        
+                                    }
+                                    const callsignToDisplay = (activeCallsign === 'all') ? 'call-sign' : activeCallsign;
+                                    message = message.replace(callsignRegex, `{${callsignToDisplay}}`); // Replace both placeholders
+                                    return { speaker, message };
+                                });
+
+                                const dialogueRows = processedCalls.map(call => `
+                                    <div class="call-row" data-speaker="${call.speaker}">
+                                        <span class="speaker">${call.speaker}:</span>
+                                        <p class="call-text">${call.message || '...'}</p>
+                                    </div>`).join('');
+
+                                card.innerHTML = `<div class="dialogue-column">${dialogueRows}</div>`;
+                                printContainer.appendChild(card);
+                            });
+                        });
+                    }
+                });
+            }
+
+            async function renderParametersPopup() {
+                const paramsContainer = document.getElementById('params-content-container');
+                const paramsData = allParameters; // Use stored parameters
+                if (Object.keys(paramsData).length === 0) {
+                    paramsContainer.innerHTML = '<p>No parameters loaded.</p>';
+                    return;
+                }
+
+                const activeCallsign = (callsignFilter.value === 'all') ? 'call-sign' : callsignFilter.value;
+                let html = '';
+                const callsignRegex = /{Call Sign}/gi;
+                for (const key in paramsData) {
+                    if (key === 'Call Sign') continue; // Skip call sign as it's used in the sentence
+
+                    html += `<div class="param-group"><h4>${key}</h4>`;
+                    const param = paramsData[key];
+                    const prefix = param.prefix || '';
+                    const suffix = param.suffix || '';
+
+                    const sentences = param.values.map(value => {
+                        const callsignPlaceholder = `{${activeCallsign}}`;                        
+
+                        const phoneticReplace = (str) => {
+                            return str.replace(/-/g, ' - ')
+                                      .replace(/SA/g, 'South Alpha').replace(/HA/g, 'Hotel Alpha')
+                                      .replace(/S1/g, 'Sierra One').replace(/S2/g, 'Sierra Two').replace(/S3/g, 'Sierra Three')
+                                      .replace(/C/g, 'Charlie').replace(/F/g, 'Foxtrot').replace(/V/g, 'Victor')
+                                      .replace(/N2/g, 'November Two').replace(/N-A-P/g, 'North Alpha - Papa').replace(/N-A/g, 'North Alpha');
+                        }
+                        
+                        const finalPrefix = prefix.replace(callsignRegex, callsignPlaceholder);
+                        const finalSuffix = suffix.replace(callsignRegex, callsignPlaceholder);
+                        const paramValue = (key.toLowerCase().includes('taxiway')) ? phoneticReplace(value) : value;
+
+                        return `<p class="param-sentence"><span class="param-prefix">${finalPrefix}</span><span class="param-value">${paramValue}</span><span class="param-suffix">${finalSuffix}</span></p>`;
+                    }).join('');
+
+                    html += `<div class="param-sentences-box">${sentences}</div></div>`;
+                }
+                paramsContainer.innerHTML = html;
+            }
+
+            async function prepareParametersForPrint() {
+                const printContainer = document.getElementById('print-params-container');
+                printContainer.innerHTML = ''; // Clear previous content
+                const paramsData = allParameters; // Use stored parameters
+                if (Object.keys(paramsData).length === 0) return;
+                
+                const activeCallsign = (callsignFilter.value === 'all') ? 'call-sign' : callsignFilter.value;
+                let html = '<h3>All Parameter Calls</h3>';
+                const callsignRegex = /{call-sign}|{Call Sign}/gi;
+                for (const key in paramsData) {
+                    if (key === 'Call Sign') continue;
+
+                    html += `<h4>${key}</h4>`;
+                    const param = paramsData[key];
+                    const prefix = param.prefix || '';
+                    const suffix = param.suffix || '';
+
+                    const sentences = param.values.map(value => {
+                        const callsignPlaceholder = `{${activeCallsign}}`;                        
+                        const phoneticReplace = (str) => {
+                            return str.replace(/-/g, ' - ')
+                            .replace(/SA/g, 'South Alpha').replace(/HA/g, 'Hotel Alpha')
+                            .replace(/S1/g, 'Sierra One').replace(/S2/g, 'Sierra Two').replace(/S3/g, 'Sierra Three')
+                            .replace(/C/g, 'Charlie').replace(/F/g, 'Foxtrot').replace(/V/g, 'Victor')
+                            .replace(/N2/g, 'November Two').replace(/N-A-P/g, 'North Alpha - Papa').replace(/N-A/g, 'North Alpha');
+                        }
+
+                        const finalPrefix = prefix.replace(callsignRegex, callsignPlaceholder);
+                        const finalSuffix = suffix.replace(callsignRegex, callsignPlaceholder);
+                        const paramValue = (key.toLowerCase().includes('taxiway')) ? phoneticReplace(value) : value;
+                        const sentence = `<span class="print-param-prefix">${finalPrefix}</span><strong>${paramValue}</strong><span class="print-param-suffix">${finalSuffix}</span>`;
+                        return `<p>${sentence}</p>`;
+                    }).join('');
+
+                    html += sentences;
+                }
+                printContainer.innerHTML = html;
+            }
+
+            function prepareInstructionsForPrint() {
+                const printContainer = document.getElementById('print-instructions-container');
+                const instructionsContent = document.querySelector('#help-popup .popup-content').innerHTML;
+                printContainer.innerHTML = instructionsContent;
+            }
+
+            function setupEventListeners() {
+                // Use event delegation for filter buttons
+                document.querySelector('.filter-container').addEventListener('click', (e) => {
+                    if (e.target.matches('.filter-btn[data-filter-group]')) {
+                        const btn = e.target;
+                        const group = btn.dataset.filterGroup;
+                        
+                        // If an ICAO button is clicked, reload the page with the new parameter
+                        if (group === 'icao') {
+                            const icaoValue = btn.dataset.filterValue;
+                            window.location.search = `?icao=${icaoValue}`;
+                            return; // Stop further execution as the page will reload
+                        }
+
+                        document.querySelectorAll(`.filter-btn[data-filter-group="${group}"]`).forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+
+                        renderCalls();
+                    }
+                });
+
+                callsignFilter.addEventListener('change', renderCalls);
+
+                document.getElementById('toggle-callsigns-btn').addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    renderCalls();
+                });
+
+                // Event delegation for popups
+                document.body.addEventListener('click', function(e) {
+                    if (e.target.matches('.phase-column, .phase-column *, .details-btn, .details-btn *')) {
+                        const btn = e.target.closest('.phase-column, .details-btn');
+                        const popup = document.querySelector(btn.dataset.popupTarget);
+                        if (popup) popup.classList.add('visible');
+                    }
+                    if (e.target.matches('.popup-overlay')) {
+                        e.target.classList.remove('visible');
+                    }
+                });
+            }
+
+            document.getElementById('print-btn').addEventListener('click', async () => {
+                await prepareRtCallsForPrint(); // Prepare the full RT call list for printing
+                await prepareParametersForPrint(); // Wait for parameters to be ready
+                prepareInstructionsForPrint(); // Prepare instructions
+                window.print(); // Then open the print dialog
+            });
+
+            document.getElementById('help-btn').addEventListener('click', () => {
+                document.getElementById('help-popup').classList.add('visible');
+            });
+
+            document.getElementById('params-btn').addEventListener('click', () => {
+                renderParametersPopup(); // Re-render with latest callsign
+                document.getElementById('params-popup').classList.add('visible');
+            });
+
+            // Initial Load
+            fetchAllData().then(setupEventListeners);
+        });
+    </script>
+
 </body>
 </html>
