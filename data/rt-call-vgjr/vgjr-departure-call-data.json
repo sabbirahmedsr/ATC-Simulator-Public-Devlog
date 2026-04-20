@@ -9,7 +9,7 @@
       { "speaker": "Pilot", "message": "Startup approved, temp 32, {time 23}, {Call Sign}." }
     ],
     "aircraft": [ "Civil", "Military Trainer", "K8" ],
-    "callsigns": []
+    "callsigns": ["ATR72", "ABC_667", "CSP_743", "RVN_592"]
   },
   {
     "phase": "taxi",
@@ -21,7 +21,7 @@
       { "speaker": "Pilot", "message": "{QNH 746}, squawk 4154, {Taxi via O-P-M} to holding point Rwy-16, {Call Sign}." }
     ],
     "aircraft": [ "Civil", "Military Trainer", "K8" ],
-    "callsigns": []
+    "callsigns": ["ATR72", "ABC_667", "CSP_743", "RVN_592"]
   },
   {
     "phase": "change_to_tower",
@@ -33,7 +33,7 @@
       { "speaker": "Pilot", "message": "Contact tower 123.2, {Call Sign}." }
     ],
     "aircraft": [ "Civil", "Military Trainer", "K8" ],
-    "callsigns": []
+    "callsigns": ["ATR72", "ABC_667", "CSP_743", "RVN_592"]
   },
   {
     "phase": "line_up",
@@ -45,7 +45,7 @@
       { "speaker": "Pilot", "message": "Lining up Rwy-16, call you ready for departure, {Call Sign}." }
     ],
     "aircraft": [ "Civil", "Military Trainer", "K8" ],
-    "callsigns": []
+    "callsigns": ["ATR72", "ABC_667", "CSP_743", "RVN_592"]
   },
   {
     "phase": "line_up_cct",
@@ -57,7 +57,7 @@
       { "speaker": "Pilot", "message": "Lining up Rwy-16 for circuit, call you ready for departure, {call-sign}." }
     ],
     "aircraft": [ "Military Trainer", "K8" ],
-    "callsigns": []
+    "callsigns": ["ABC_667", "CSP_743", "RVN_592"]
   },
   {
     "phase": "take_off",
@@ -69,7 +69,7 @@
       { "speaker": "Pilot", "message": "s/w copied, cleared for takeoff Rwy-16, {Call Sign}." }
     ],
     "aircraft": [ "Civil", "Military Trainer", "K8" ],
-    "callsigns": []
+    "callsigns": ["ATR72", "ABC_667", "CSP_743", "RVN_592"]
   },
   {
     "phase": "airborne",
@@ -80,7 +80,7 @@
       { "speaker": "Pilot", "message": "airborne copied, call you passing 4000ft {Call Sign}" }
     ],
     "aircraft": [ "Civil" ],
-    "callsigns": []
+    "callsigns": ["ATR72"]
   },
   {
     "phase": "transfer_to_control",
@@ -92,7 +92,7 @@
       { "speaker": "Pilot", "message": "over to control, good day {Call Sign}" }
     ],
     "aircraft": [ "Civil" ],
-    "callsigns": []
+    "callsigns": ["ATR72"]
   },
   {
     "phase": "change_to_training",
@@ -104,7 +104,7 @@
       { "speaker": "Pilot", "message": "Over to training, {Call Sign}." }
     ],
     "aircraft": [ "Military Trainer", "K8" ],
-    "callsigns": []
+    "callsigns": ["ABC_667", "CSP_743", "RVN_592"]
   },
   {
     "phase": "turning_right",
@@ -116,7 +116,7 @@
       { "speaker": "Pilot", "message": "Call you setting course, {Call Sign}." }
     ],
     "aircraft": [ "Military Trainer", "K8" ],
-    "callsigns": []
+    "callsigns": ["ABC_667", "CSP_743", "RVN_592"]
   },
   {
     "phase": "set_course",
@@ -128,7 +128,7 @@
       { "speaker": "Pilot", "message": "Call you 5 miles out, {Call Sign}." }
     ],
     "aircraft": [ "Military Trainer", "K8" ],
-    "callsigns": []
+    "callsigns": ["ABC_667", "CSP_743", "RVN_592"]
   },
   {
     "phase": "5_miles_out",
@@ -140,7 +140,7 @@
       { "speaker": "Pilot", "message": "Over to training, {Call Sign}." }
     ],
     "aircraft": [ "Military Trainer", "K8" ],
-    "callsigns": []
+    "callsigns": ["ABC_667", "CSP_743", "RVN_592"]
   },
   {
     "phase": "startup",
@@ -152,7 +152,7 @@
       { "speaker": "Pilot", "message": "Startup approved, temp 32, {time 23}, {Call Sign}." }
     ],
     "aircraft": [ "Helicopter" ],
-    "callsigns": []
+    "callsigns": ["RNG_1171", "RNG_1172"]
   },
   {
     "phase": "air_taxi",
@@ -164,7 +164,7 @@
       { "speaker": "Pilot", "message": "Cleared for air taxi to R-P via Q, QNH 29.19, {Call Sign}." }
     ],
     "aircraft": [ "Helicopter" ],
-    "callsigns": []
+    "callsigns": ["RNG_1171", "RNG_1172"]
   },
   {
     "phase": "change_to_tower_cct",
@@ -176,7 +176,7 @@
       { "speaker": "Pilot", "message": "over to tower, {Call Sign}." }
     ],
     "aircraft": [ "Helicopter" ],
-    "callsigns": []
+    "callsigns": ["RNG_1171", "RNG_1172"]
   },
   {
     "phase": "change_to_tower_5mw",
@@ -188,7 +188,7 @@
       { "speaker": "Pilot", "message": "Over to tower, {Call Sign}." }
     ],
     "aircraft": [ "Helicopter" ],
-    "callsigns": []
+    "callsigns": ["RNG_1171", "RNG_1172"]
   },
   {
     "phase": "takeoff",
@@ -200,7 +200,7 @@
       { "speaker": "Pilot", "message": "s/w copied, cleared for takeoff, {Call Sign}." }
     ],
     "aircraft": [ "Helicopter" ],
-    "callsigns": []
+    "callsigns": ["RNG_1171", "RNG_1172"]
   },
   {
     "phase": "downwind",
@@ -212,7 +212,7 @@
       { "speaker": "Pilot", "message": "call you final for R-P, {Call Sign}." }
     ],
     "aircraft": [ "Helicopter" ],
-    "callsigns": []
+    "callsigns": ["RNG_1171", "RNG_1172"]
   },
   {
     "phase": "report_5mw",
@@ -224,7 +224,7 @@
       { "speaker": "Pilot", "message": "call you ops normal, {Call Sign}." }
     ],
     "aircraft": [ "Helicopter" ],
-    "callsigns": []
+    "callsigns": ["RNG_1171", "RNG_1172"]
   },
   {
     "phase": "ops_normal",
@@ -236,6 +236,6 @@
       { "speaker": "Pilot", "message": "Roger, {Call Sign}." }
     ],
     "aircraft": [ "Helicopter" ],
-    "callsigns": []
+    "callsigns": ["RNG_1171", "RNG_1172"]
   }
 ]

@@ -9,7 +9,7 @@
       { "speaker": "Pilot", "message": "call you base, {Call Sign}." }
     ],
     "aircraft": [ "Military Trainer", "K8" ],
-    "callsigns": []
+    "callsigns": ["ABC_667", "CSP_743", "RVN_592"]
   },
   {
     "phase": "downwind_for_low_go",
@@ -21,7 +21,7 @@
       { "speaker": "Pilot", "message": "call you base, {Call Sign}." }
     ],
     "aircraft": [ "Military Trainer", "K8" ],
-    "callsigns": []
+    "callsigns": ["ABC_667", "CSP_743", "RVN_592"]
   },
   {
     "phase": "downwind_for_touch_and_go",
@@ -33,7 +33,7 @@
       { "speaker": "Pilot", "message": "call you base, {Call Sign}." }
     ],
     "aircraft": [ "Military Trainer", "K8" ],
-    "callsigns": []
+    "callsigns": ["ABC_667", "CSP_743", "RVN_592"]
   },
   {
     "phase": "downwind_for_full_stop",
@@ -45,7 +45,7 @@
       { "speaker": "Pilot", "message": "call you base, {Call Sign}." }
     ],
     "aircraft": [ "Military Trainer", "K8" ],
-    "callsigns": []
+    "callsigns": ["ABC_667", "CSP_743", "RVN_592"]
   },
   {
     "phase": "base_for_low_go",
@@ -57,7 +57,7 @@
       { "speaker": "Pilot", "message": "Gears are green, call you final for Rwy-16, {Call Sign}." }
     ],
     "aircraft": [ "Military Trainer", "K8" ],
-    "callsigns": []
+    "callsigns": ["ABC_667", "CSP_743", "RVN_592"]
   },
   {
     "phase": "base_for_touch_and_go",
@@ -69,7 +69,7 @@
       { "speaker": "Pilot", "message": "Gears are green, call you final for Rwy-16, {Call Sign}." }
     ],
     "aircraft": [ "Military Trainer", "K8" ],
-    "callsigns": []
+    "callsigns": ["ABC_667", "CSP_743", "RVN_592"]
   },
   {
     "phase": "base_for_full_stop",
@@ -81,7 +81,7 @@
       { "speaker": "Pilot", "message": "Gears are green, call you final for Rwy-16, {Call Sign}." }
     ],
     "aircraft": [ "Military Trainer", "K8" ],
-    "callsigns": []
+    "callsigns": ["ABC_667", "CSP_743", "RVN_592"]
   },
   {
     "phase": "initial_to_downwind",
@@ -93,7 +93,7 @@
       { "speaker": "Pilot", "message": "call you downwind, {Call Sign}." }
     ],
     "aircraft": [ "Military Trainer", "K8" ],
-    "callsigns": []
+    "callsigns": ["ABC_667", "CSP_743", "RVN_592"]
   },
   {
     "phase": "final_for_full_stop",
@@ -105,7 +105,7 @@
       { "speaker": "Pilot", "message": "s/w copied, cleared to land Runway 16, {Call Sign}." }
     ],
     "aircraft": [ "Military Trainer", "K8" ],
-    "callsigns": []
+    "callsigns": ["ABC_667", "CSP_743", "RVN_592"]
   },
   {
     "phase": "final_for_touch_and_go",
@@ -117,7 +117,7 @@
       { "speaker": "Pilot", "message": "s/w copied, cleared for touch and go Runway 16, {Call Sign}." }
     ],
     "aircraft": [ "Military Trainer", "K8" ],
-    "callsigns": []
+    "callsigns": ["ABC_667", "CSP_743", "RVN_592"]
   },
   {
     "phase": "final_for_low_go",
@@ -129,6 +129,6 @@
       { "speaker": "Pilot", "message": "s/w copied, cleared for low go Runway 16, {Call Sign}." }
     ],
     "aircraft": [ "Military Trainer", "K8" ],
-    "callsigns": []
+    "callsigns": ["ABC_667", "CSP_743", "RVN_592"]
   }
 ]

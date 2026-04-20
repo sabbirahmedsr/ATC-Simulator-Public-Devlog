@@ -1,0 +1,343 @@
+GF CALL (INITIAL APPROACH)  FOR PT-6
+Departure.
+STARTUP	AC	JSR, ABC-661, start.
+	GRD	ABC-661, startup approve temp 32 & time 23.
+TAXI	AC	JSR, ABC-661, request taxi.
+	GRD	ABC-661, JSR, taxi via O-P-M to holding point RW-16, QNH-746.
+CHANGE TO TWR	AC	ABC-661, request area.
+	Grd	ABC-661, JSR, area NL1, contact tower 123.2.
+LINE-UP	AC	ABC-661, JSR, request lineup.
+	TWR	ABC-661, JSR, lineup runway 16 report ready for departure.
+TAKE-OFF	AC	JSR, ABC-664, ready.
+	TWR	ABC-661, JSR, area NH1, 1000ft S/W 210/06 kts, cleared for takeoff Rwy-16.
+CHANGE TO TRG	AC	JSR, ABC-661, we are abeam Z2, line to change to training.
+
+GF CALL (INITIAL APPROACH)  FOR PT-6
+Arrival
+	AC	Cosmic, ABC-661, request rejoining instructions for base.
+	Cosmic	ABC-661, cosmic, request intention overhead.
+	AC	Cosmic, ABC-661, initial pitchout land.
+	Cosmic	ABC-661, cosmic, advice from tower to maintain 1500ft in co-ordination with felix, report abeam Z2.
+Rejoin Call.
+Entry	AC	JSR, ABC-661, we are crossing Z-2 maintaining 1500ft.
+	TWR	ABC-661, JSR, maintain 1500ft, report field in siqht Rwy-16.
+Field in Sight	AC	JSR, ABC-661, field in siqht Rwy-16.   
+	TWR	ABC-661, JSR, report initial Rwy-16.
+Beginning of Initial	AC	ABC-661, initial Rwy-16.
+	TWR	ABC-661, JSR, report end of initial Rwy-16.
+End of Initial	AC	JSR, ABC-661, end of initial Rwy-16.
+	TWR	ABC-661, JSR, descent to 1000ft join beginning of downwind.
+Downwind	AC	ABC-661, we are beginning of downwind Rwy-16.
+	TWR	ABC-661, JSR, report end of downwind Rwy-16.
+Base	AC	JSR ABC-661, we are turning base leg.
+	TWR	AB-661, JSR, report final for Rwy-16.
+Final	AC	JSR, ABC-661, final for full stop/touch & go/low go.
+	TWR	ABC-661, JSR, check gears down and locked, S/W 210/08 kts, clear for full 
+	AC	Wind copied cleared land/low go/ touch &go, Rwy-16.
+RWY Vacate	TWR	ABC-661, JSR, taxi via Oscar after vacating contact ground 121.8.
+
+
+
+NAV MISSION (PT-6/GROB-120TP)
+Departure
+Startup	AC	JSR GRD, CSP-731 request start.
+	GRD	CSP 731, JSR GRD startup approved temp 310 time 25.
+	AC	Temp 31, time 25 clear start CSP 731.
+Taxi	AC	JSR GRD CSP-731 request taxi new tarmac.
+	GRD	CSP-731 JSR GRD taxi via B-P-M to holding point Rwy-16 QNH 1016, Squawk 4154.
+	AC	Squawk 4154, QNH 1016 taxi via B-P-M to holding CSP-731 point Rwy-16 CSP-731.
+	GRD	CSP-731 JSR GRD request intention after departure.
+	AC	JSR GRD CSP-731, Be advice, after departure like to climb 1500ft on runway heading then turn right, overhead set course at 3500 ft on track 0850 for Alfadanga.
+	GRD	Overhead set course at 3500ft for Alfadange on track 0850 copied.
+Change to TWR	AC	JSR GRD, CSP-731 .approaching M line to change to Twr.
+	GRD	CSP-731, contact tower 123.2.
+	AC	Mobile CSP-731 R/T check how do you read.
+	Mobile	CSP-731 Mobile loud and clear, how do you read.
+	AC	You are also loud and clear.
+Line-Up	AC	JSR CSP-731, holding mike request line up.
+	TWR	CSP-731 JSR, line up RWY-16 report ready.
+	AC	Lining up Rwy-16  
+	TWR	CSP-731 JSR copied, report ready for departure.
+Departure	AC	JSR CSP-731 ready for departure.
+	TWR	After departure 1500ft RWY heading thane after turn right S/W 1600/07 kts clear for takeoff rwy-16.
+	AC	Wind copied clear take-off CSP-731.
+	TWR	CSP-731 JSR report turning right.
+Turning Right	AC	JSR CSP-731 turning right climbing to 3500 stand by for estimate.
+	TWR	Copied, report setting course.
+Set Course	AC	JSR TWR CSP-731 estimate Alfadanga at 40.
+	TWR	Estimate atfadanga at 40 copied report 5 miles out.
+5 Miles Out	AC	JSR TWR CSP-731 we are 5 miles out.
+	TWR	CSP-731 JSR Twr contact trg.
+
+NAV MISSION (PT-6/GROB-120TP)
+Arrival
+	AC	Felix CSP-731 over Kaliganj like to set course for base, at 1500ft.
+	Cosmic	Copied request intention overhead.
+	AC	Initial pitch out land.
+	Cosmic	Initial pitch out land copied stand by for rejoining Instruction.
+	AC	Copied standing by.
+	Cosmic	CSP-731 cosmic, advice from TWR to maintain 1500ft coordination with felix, report abeam Z2.
+	AC	Cosmic CSP-731 abeam Z2 at 1500ft, like to change to Twr.
+	Cosmic	CSP-731, cosmic, maintain 1500ft contact Twr 123.2.
+	AC	Felix CSP-731 over Kaliganj like to set course for base, at 1500ft.
+Entry	AC	JSR TWR, CSP-731, over Z2 at 1500ft for initial pitch out land.
+	TWR	CSP-731 maintain 1500ft report field insight, be advised CCT active by one Grob and one PT-6.
+	AC	Traffic copied call you field in sight, 731.
+Field in sight	AC	JSR CSP-731 field in sight 1500ft.
+	TWR	CSP-731 maintain 1500ft report initial Rwy-16.
+Begin of Initial	AC	Initial 1500ft.
+	TWR	Report end of initial.
+End of Initial	AC	End end initial, CSP-731.
+	TWR	CSP-731, JSR TWR descend to 1000ft report downwind No 2, No 1 Grob abeam tower.
+	AC	Traffic copied, call you downwind.
+Downwind	AC	TWR CSP-731 downwind for full stop. 
+	TWR	Full stop copied report final No 2, No 1 turning base.
+	AC	Call you final No 2, CSP-731.
+Final	AC	JSR CSP-731 final for full stop.
+	TWR	CSP-731, check gears down and locked, surface wind 160/07 kts, clear to land RWY-16.
+	AC	Wind copied clear to land CSP-731.
+RWY Vacate	TWR	CSP-731, taxi via O when vacated contact ground.
+	AC	Vacating via O, over to Grd.
+Taxi to Tarmarc	AC	JSR GRD, CSP-731 Back to your frequency.
+	GRD	CSP-731, JSR GRD, taxi via O-P-A tarmac.
+	AC	Taxi via O-P-A tarmac CSP-731.
+
+VOR-Y APPROACH FOR PT-6/GROB-120TP/115TP
+Departure
+STARTUP	AC	JSR GRD, CSP-737, Request start.
+	GRD	CSP-737, JSR GRD, Startup approved, temp-31, Time-40
+TAXI	AC	JSR GRD, Csp-737, request taxi
+	GRD	CSP-737, JSR GRD, Taxi via B-P-M to holding point rwy-34, QNG-1014, Squak-4154
+	AC	JSR GRD, CSP-737, QNG-1014, Squak-4184-clear taxi via B-P-M to holding point rwy-16. 
+Be Advise, on recovery like to carry out VOR-Y approach, EAT-30 (for PT-6 RCLD approach).
+	GRD	CSP-737, JSR GRD, on recovery VOR-Y approach, EAT-30 copied, stack will be subject to traffic. Area-NL1 (for PT-6 RCLD) Copied
+CHANGE
+TO TWR	AC	JSR GRD, CSP-737, Approaching M. Like to charge Tower.
+	GRD	CSP-737, JSR GRD area NL-1 contact tower 123.2
+MOBILE
+RT CHECK	AC	Mobile, Csp-737, RT check.
+	Mobile 	CSP-737, Mobile, loud and clear. How do you read?
+	AC	Mobile, CSP-737. You are also load and clear.
+LINE-UP	AC	JSR. CSP-737,.Holding M. request line up.
+	TWR	CSP-737, JSR, line up rwy-16. Report ready for departure.
+		
+DEPARTURE	AC	JSR, CSP-737. Ready for departure, Request SID for Z-2.
+	TWR	CSP-737, JSR, SID for Z-2 approved, Area NL-1 1000ft. S/W-180/05 kts clear for take off rwy-16.
+	AC	JSR, CSP-737 wind copied clear take off rwy-16.
+CHANGE
+TO TRG	AC	JSR, CSP-737. Approaching Z-2. Like to charge.
+	TWR	CSP-737, JSR contact trg.
+
+VOR-Y APPROACH FOR PT-6/GROB-120TP/115TP
+Arrival
+	AC	Felix Csp-737 like to leave NL-1 Request pigeon.
+	Felix	Csp-737 Felix your pegion-20 NM, 1700.
+	AC	Felix, Csp-737 pigeon copied. Break cosmic, Csp-737, request rejoining instruction.
+	Cosmic	Csp-737, Cosmic. Request intention overhead.
+	AC	Cosmic, Csp-737,on recovery like to carry out VOR-Y approach, EAC-30.
+	Cosmic	CSP-737, cosmic EAT-30 for VOR-Y approach, S/B for rejoining instruction.
+	Cosmic	CSP-737, Cosmic. Advice from tower to maintain 3000ft in co-ordination with felix report abeam Z-2 (for PT-6 2000ft)
+	AC	3000ft copied (2000ft for PT-6)
+	AC	Exiting area, like to change to tower.
+	Cosmic	CSP-737, cosmic. Contact tower 123.2.
+Entry	AC	JSR, Csp-737. Maintaining 3000ft for VOR-Y approach EAT 30.
+	TWR	CSP-737, JSR. Maintain 3000ft. Report B-1.
+	AC	JSR, CSP-737, call you B-1.
+B1 (First Fix)	AC	CSP-737, JSR, B1 3000ft (2000ft for PT-6)
+	TWR	JSR, CSP-731. Maintain 3000ft Report B2.
+B2 (Last Fix)	AC	JSR, Csp-737. B2 3000ft. Approaching out bound of led down (2000ft for PT-6)
+	TWR	CSP-737, JSR. Report 6 mile out (subject to traffic)
+6 Mile Out	AC	JSR, CSP-737. 6 Mile out.
+	TWR	CSP-737, JSR. Cleared for the approach. Descent to 1700ft. Report turning inbound (1200ft for PT-6)
+Turning Inbound	AC	JSR, CSP-737. Turning inbound, 1700ft (1200ft for PT-6)
+	TWR	CSP-737, JSR. Report steady inbound.
+Steady Inbound	AC	JSR, CSP-737. Steady inbound.
+	TWR	CSP-737, JSR. Descend to minima, report Rwy in sight.
+RWY in Sight	AC	JSR, CSP-737. Rwy in sight.
+	TWR	CSP-737, JSR. Ck gears dawn and locked. S/W-1800/05KTS, clear for low go RWY 16/CALL B3/continue app.
+	AC	JSR, CSP-737. Wind copied clear low go Rwy 16/call you B3.
+Report D/Wind	AC	JSR, CSP-737. Report downwind Rwy-16.
+D/Wind for
+Full stop	AC	JSR, CSP-737.Downwind Rwy-16
+	TWR	CSP-737, JSR. Report final Rwy-16.
+Final for
+Full stop	AC	JSR, CSP-737, final Rwy-16.
+	TWR	CSP-737, JSR, CK gears sown and locked S/W 1800/05kts. Clear to land Rwy-16.
+	AC	Wined copied, cleared to land, CSP-737
+RWY Vacate	AC	JSR, CSP-737, Request dispersal.
+	TWR	CSP-737, JSR. Taxi via O when vacated contact GRD 121.8.
+	AC	Over to GRD, CSP-737.
+PARKING	AC	JSR GRD, CSP-737. Back to your frequency like to follow O-P-A.
+	TWR	CSP-737, JSR GRD. Taxi via O-P-A to tarmac.
+	
+PFL OVERHEAD FOR GROB-120TP/PT-6
+Departure
+	AC	JSR GRD JSR GRD CSP-740.
+	GRD	CSP-740 JSR GRD go ahead.
+STARTUP	AC	JSR GRD CSP-740 request start from new tarmac.
+	GRD	CSP-740 JSR GRD start up approved temp 230 C time 20.
+	AC	20.23 clear start CSP-740.
+TAXI	AC	JSR GRD CSP-740 request taxi and squawk.
+	GRD	CSP-740 JSR GRD taxi via B-P-M to holding point Rwy-16 QNH-1004, squawk- 4174. 
+	AC	4174 QNG-1016.2 taxi via B-P-M to holding point Rwy-16 CSP-740.
+CHANGE
+TO TWR	AC	JSR GRD CSP-740 we are approaching ‘M’ like to change.
+	Grd	CSP-740 JSR GRD area NL-2 contact tower 123.2.
+	AC	Area N-2 over to tower 123.2.
+LINE-UP	AC	JSR, CSP-740, we are approaching ‘M’ request line up.
+	TWR	CSP-740, JSR, line up Rwy-16. Report ready for departure.
+	AC	Call you ready for departure CSP-740.
+TAKE-OFF	AC	JSR CSP-740 we are ready for departure.
+	TWR	CSP-740 JSR, 1000ft for NL2 S/W 2500/05 Kts cleared for takeoff Rwy-16.
+CHANGE
+TO TRG	AC	JSR CSP-740 approaching Z2 line to change.
+	TWR	CSP-740 JSR contact training.
+	AC	Over to training CSP-740.
+
+PFL OVERHEAD FOR GROB-120TP/PT-6
+Arrival
+	AC	Cosmic cosmic, CSP-740.
+	Cosmic	CSP-740 cosmic go ahead.
+	AC	Cosmic csp-740 request rejoining instructions.
+	Cosmic 	CSP-740 cosmic request intention overhead.
+	AC	Cosmic CSP-740 we would like to carry out PFL (OH). Request rejoining instructions.
+	Cosmic	CSP-740 cosmic, PFL (OH) copied, standby for rejoining instructions.
+	AC	Standing by for rejoining instructions CSP-740.
+	Cosmic	CSP-740 cosmic, advice for Twr to descend and maintain 2000ft in co-ordination with felix report abeam Z2.
+	AC	Descend and maintain 2000ft call you abeam Z-2, CSP-740.
+	AC	Cosmic, CSP-740, we are abeam Z-2 line to change.
+	Cosmic	CSP-740, cosmic, maintain 2000ft contract Twr 123.2.
+
+P.T.O
+PFL (Overhead)
+Entry	AC	JSR CSP-740 RT check.
+	TWR	CSP-740 JSR land and clear maintain 2000ft report field insight Rwy-16.
+Field in Sight	AC	JSR CSP-740 field insight Rwy-16.
+	TWR	CSP-740, report crossing undershoot Rwy-16
+Undershoot	AC	Crossing undershoot Rwy-16.
+	TWR	CSP-740 JSR maintain 2000ft report approaching high key.
+Approach High Key	AC	JSR CSP-740 approaching high key.
+	TWR	CSP-740 JSR report high key.
+High Key	AC	JSR CSP-740 high key.
+	TWR	CSP-740 JSR report low key (1500ft).
+Low Key	AC	JSR CSP-740 report low key.
+	TWR	CSP-740 JSR report Base key (1200ft).
+Base Key	AC	JSR CSP-740 Base key.
+	TWR	CSP-740, S/W-3200/05 knots, check gears down and locked report final Rwy-16.
+Final [Land]	AC	JSR, CSP-740, finals 3 green full stop.
+	TWR	CSP-740 JSR, recheck gears down and locked S/W-3200, 05 knots clr to land Rwy-16.
+RWY Vacate	AC	JSR CSP-740 request dispersal.
+	TWR	CSP-740 JSR taxi via Q after vacating contact GRD.
+Taxi to Tarmarc	AC	JSR GRD CSP-740 back to your frequency.
+	GRD	CSP-740 JSR GRD taxi via Q-P-A tarmac.
+	AC	Following Q-P-A tarmac CSP-740.
+		
+HELICOPTER (CCT)
+Startup	AC	JSR GRD, RNG-1490 request start up.
+	GRD	RNG-1490, JSR GRD, start up approved, temp-260C, Time-23.
+Taxi	AC	JSR GRD, RNG-1490, request air taxi TO R-P.
+	GRD	RNG-1490, JSR GRD, clear air taxi to R-P via Q, QNG-29.19,
+Change to TWR	AC	JSR GRD, RNG-1490,we will line to operate in CCT.
+	GRD	RNG-1490, JSR GRD, circuit copied, contact tower.
+	AC	JSR GRD, RNG-1490, over to tower.
+Take-off	AC	JSR RNG-1490, ready for departure.
+	TWR	RNG-1490, JSR surface wind 1800/05 kts, clear for take-off, runway-16.
+	AC	Wind copied, clear for take off RGR-1490.
+	TWR	RNG-1490, JSR, report downwind.
+	AC	JSR, RNG-1490, call you downwind.
+Downwind	AC	JSR, RNG-1490, downwind.
+	TWR	RNG-1490, JSR, report final for R-P.
+Final	AC	JSR, RNG-1490, final for R-P.
+	TWR	RNG-1490, JSR, surface wind 1800/05 kts cleared to land R-P.
+RWY Vacate	AC	JSR, RNG-1490, request dispersal
+	TWR	RNG-1490, JSR, air taxi via Q, after vacating contact GRD 121.8.
+Taxi to Tarmarc	AC	JSR GRD, RNG-1490, back to your frequency.
+	GRD	RNG-1490, JSR GRD, air taxi via Q to heliped.
+	AC	JSR GRD, RNG-1490 Q to helipad copied.
+HELICOPTER (5 Miles West - Departure)
+Startup	AC	JSR GRD, RNG-1490, request stat-up.
+	GRD	RNG-1490, JSR GRD, stat up approved, temp -270, time-23.
+Taxi	AC	JSR GRD, RNG-1490, request taxi to R-P.
+	GRD	RNG-1490, JSR GRD, clear Air taxi to R-P via Q, QNG- 29.19.
+Change to TWR	AC	JSR GRD, RNG-1490, we will like to operate 05 miles west.
+	GRD	RNG-1490, JSR GRD, 05 miles west copied, contact tower 123.2.
+	AC	JSR GRD, RNG-1490, over to tower change.
+Take off	AC	JSR, RNG-1490, ready for departure.
+	TWR	RNG-1490, JSR, after departure 05 miles west, surface wind 1800/05 kts,
+	AC	JSR, RNG-1490, cleared take off R-P.
+	TWR	RNG-1490, JSR, report reaching 05 mile west.
+5 Mile west	AC	JSR, RNG-1490, we are at 05 miles west. call you ops normal.
+	TWR	RNG-1490, JSR, call ops normal every after 10 mins.
+Ops Normal	AC	JSR, RNG-14790, 5 miles west operating normal.
+	TWR	RNG-1490, JSR, Ops normal copied.
+HELICOPTER (5 Miles West - Arrival)
+Entry	AC	JSR, RNG-1490, operating 5 miles west, request to join CCT for landing.
+	TWR	RNG-1490, JSR, repent downwind Rwy-16.
+Downwind	AC	JSR, RNG-1490, downwind for R-P.
+	TWR	RNG-1490, JSR, report final for R-P.
+Final	TWR	RNG-1490, JSR, Surface wind 1800/05 kts clear to land R-P.
+RWY Vacate	AC	JSR, RNG-1490, request dispersal.
+	TWR	RNG-1490, JSR, dispersal via Q, contact GRD 121.8.
+Taxi to Tarmarc	AC	JSR GRD, RNG-1490, back to your frequency.
+	GRD	RNG-1490, JSR GRD, taxi via Q to helipad.
+	AC	JSR GRD, RNG-1490, Q to helipad copied.
+
+CIVIL DEPARTURE
+	AC	UBG-122, request departure information. 
+	GRD	UBG-122, JSR GRD, Expected RW in use 16, S/W- 310/05 kts, VIS - 1200m, 
+QNH - 1012 Hpa, Temp - 300C, Time - 12
+	AC	JSR UBG-122, like to maintain FL090
+	GRD	UBG-122, JSR GND, FL090 copied.
+Start up	AC	JSR UBG-122. Start.
+	GRD	UBG-122, JSR GND, startup approved temp 33, time 14
+Taxi	AC	JSR UBG-122, request taxi.
+	GRD	UBG-122, JSR GND, taxi via L-P-M to holding point RWY-16, QNH 1012.
+	GRD	UBG-122, JSR GND, Confirm ready to copy ATC.
+ATC	TWR	JSR, UBG-122, GO ahead.
+	GRD	JSR, UBG-122, cleared to Dhaka via W2, climb and cruise FL090 squawk 4173.
+	AC	JSR, UBG-122, cleared to Dhaka via W2, climb and cruise FL090, squawk 4173
+	GRD	JSR, UBG-122, Read back correct.
+Change to TWR	AC	JSR, UBG-122, holding M like to change to tower.
+	GND	UBG-122, contact tower 123.2.
+CIVIL ARRIVAL
+	AC	JSR UBG-122.
+	TWR	UBG-122, JSR go aheacl.
+	AC	JSR UBG-122 airborne from DAC, maintaining FL 080, estimate JSR 0420.
+	TWR	UBG-122 JSR maintaining FL080, estimate JSR 0420 copied. Cleared to JSR via W-2. On arrival expect RNP/VOR-Y approach RW-16/34. No delay expected S/By for JSR WX.
+	AC	Read back.
+	TWR	UBG-122 JSR, check JSR WX: SW – 280/05kts, VIS - 3000m, PW - Haze, Cloud - Nil, QNG - 1013, Temp - 30, RW in use - 16/34, Report released by DAC control & ready for descend.
+VOR-Y APPROACH
+ENTRY	AC	JSR UBG-122 released by DAC control, ready for descend.
+	TWR	UBG-122 descend to 3000 QNG-1013, report over VOR, proceeding outb. of let down RW-16.
+OVER VOR	AC	Over VOR proceeding outbound of letdown.
+	TWR	Cleared for the approach, descend to 1700 report turning inbound.
+Turning Inbound	AC	Turning inbound.
+	TWR	Report established inbound.
+Establish Inbound	AC	Established inbound.
+	TWR	Descend to your minima report RW insight.
+RWY in Sight	AC	RW insight.
+	TWR	Check gears down and locked, SW-280/05 KTS, RW-16/34, cleared to land.
+	AC	Wind copied cleared to lard UBG-122.
+VOR-Z Approach
+ENTRY	AC	JSR UBG-122, released by DAC control, ready for descend.
+	TWR	UBG-122, descend to 3000ft QNH-1013, report establish 12 DME ARC Rwy-16/34.
+12 DME Arc	AC	Established 12 DME ARC.
+	TWR	Cleared for the approach, descend to 1700 report crossing radial 0300/1300(34).
+Crossing R300	AC	Crossing radial 0300/1300(34).
+	TWR	Report turning inbound Rwy-16\34.
+Turning Inbound	AC	Turning inbound.
+	TWR	Descend to minima, report Rwy insight.
+RWY in sight	AC	RW insight.
+	TWR	Check gears down and locked, SW-calm, Rwy-16/34, cleared to land.
+RNP Approach
+Entry	AC	JSR UBG-122, released by DAC control, ready for descend.
+	TWR	UBG-122, descend to 3000ft QNG-1013, report JERIN/JF34R.
+Over JERIN	AC	Over JERIN/JF34R.
+	TWR	Cleared for the approach, descend to 1700ft report JR161/JR341.
+Over JR161	AC	Over JR161/JR341.
+	TWR	Report JR160/JR340.
+Over JR160	AC	Over JR160/JR340.
+	TWR	Check gears down and locked SW-calm, Rwy-16/34.
+After Landing
+Taxi to Tarmarc	TWR	UBG-122, JSR, landed 52, taxi via R-P-L to Bay 04.
+	AC	R-P-L to Bay 04 UBG-122.

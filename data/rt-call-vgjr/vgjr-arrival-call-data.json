@@ -8,7 +8,7 @@
       { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, maintain 1500ft, report field in sight Rwy-16." },
       { "speaker": "Pilot", "message": "Maintain 1500ft, call you field in sight Rwy-16, {Call Sign}." }
     ],
-    "callsigns": []
+    "callsigns": ["ABC_667", "CSP_743", "RVN_592"]
   },  
   {
     "phase": "entry_NAV",
@@ -19,7 +19,7 @@
       { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, maintain 1500 feet, report field in sight." },
       { "speaker": "Pilot", "message": "call you field in sight Rwy-16, {Call Sign}." }
     ],
-    "callsigns": []
+    "callsigns": ["ABC_667", "CSP_743", "RVN_592"]
   },
   {
     "phase": "entry_PFL",
@@ -30,7 +30,7 @@
       { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, loud and clear. Maintain 2000 feet, report field in sight Rwy-16." },
       { "speaker": "Pilot", "message": "Maintain 2000 feet, call you field in sight Rwy-16, {Call Sign}." }
     ],
-    "callsigns": []
+    "callsigns": ["ABC_667", "CSP_743"]
   },
   {
     "phase": "entry_VOR-Y_military",
@@ -41,7 +41,7 @@
       { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, maintain 3000 feet, report B-1." },
       { "speaker": "Pilot", "message": "Maintain 3000 feet, call you B-1, {Call Sign}." }
     ],
-    "callsigns": []
+    "callsigns": ["ABC_667", "CSP_743", "RVN_592"]
   },
   {
     "phase": "entry_VOR-Y_civil",
@@ -52,7 +52,7 @@
       { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, descend to 3000 feet, {QNH 1013}, report over VOR, proceeding outbound of let down Rwy-16." },
       { "speaker": "Pilot", "message": "Descending to 3000 feet, {QNH 1013}, call you over VOR, proceeding outbound of let down Rwy-16, {Call Sign}." }
     ],
-    "callsigns": []
+    "callsigns": ["ATR72"]
   },
   {
     "phase": "entry_VOR-Z",
@@ -63,7 +63,7 @@
       { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, descend to 3000 feet, {QNH 1013}, report established 12 DME Arc Rwy-16." },
       { "speaker": "Pilot", "message": "Descending to 3000 feet, {QNH 1013}, call you established 12 DME Arc Rwy-16, {Call Sign}." }
     ],
-    "callsigns": []
+    "callsigns": ["ATR72"]
   },
   {
     "phase": "entry_RNP",
@@ -74,7 +74,7 @@
       { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, descend to 3000 feet, QNH 1013, report over JERIN." },
       { "speaker": "Pilot", "message": "Descending to 3000 feet, {QNH 1013}, call you over JERIN, {Call Sign}." }
     ],
-    "callsigns": []
+    "callsigns": ["ATR72"]
   },
   {
     "phase": "field_in_sight",
@@ -85,7 +85,7 @@
       { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, report initial Rwy-16." },
       { "speaker": "Pilot", "message": "call you initial Rwy-16, {Call Sign}." }
     ],
-    "callsigns": []
+    "callsigns": ["ABC_667", "CSP_743", "RVN_592"]
   },
   {
     "phase": "beginning_of_initial",
@@ -96,7 +96,7 @@
       { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, report end of initial Rwy-16." },
       { "speaker": "Pilot", "message": "call you end of initial Rwy-16, {Call Sign}." }
     ],
-    "callsigns": []
+    "callsigns": ["ABC_667", "CSP_743", "RVN_592"]
   },
   {
     "phase": "end_of_initial",
@@ -107,7 +107,7 @@
       { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, descent to 1000ft join beginning of downwind." },
       { "speaker": "Pilot", "message": "call you downwind, {Call Sign}." }
     ],
-    "callsigns": []
+    "callsigns": ["ABC_667", "CSP_743", "RVN_592"]
   },
   {
     "phase": "field_in_sight_undershoot",
@@ -118,7 +118,7 @@
       { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, report crossing undershoot Rwy-16." },
       { "speaker": "Pilot", "message": "call you crossing undershoot Rwy-16, {Call Sign}." }
     ],
-    "callsigns": []
+    "callsigns": ["ABC_667", "CSP_743", "RVN_592"]
   },
   {
     "phase": "undershoot",
@@ -129,7 +129,7 @@
       { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, maintain 2000 feet, report approaching high key." },
       { "speaker": "Pilot", "message": "Maintain 2000 feet, call you approaching high key, {Call Sign}." }
     ],
-    "callsigns": []
+    "callsigns": ["ABC_667", "CSP_743", "RVN_592"]
   },
   {
     "phase": "approaching_high_key",
@@ -140,7 +140,7 @@
       { "speaker": "TWR", "message": "{Call Sign}, {JSR TWR}, report high key." },
       { "speaker": "Pilot", "message": "call you report high key, {Call Sign}." }
     ],
-    "callsigns": []
+    "callsigns": ["ABC_667", "CSP_743"]
   },
   {
     "phase": "high_key",
@@ -152,7 +152,7 @@
       { "speaker": "Pilot", "message": "call you low key, {Call Sign}." }
     ],
     "aircraft": [ "PT6", "K8" ],
-    "callsigns": []
+    "callsigns": ["ABC_667", "CSP_743", "RVN_592"]
   },
   {
     "phase": "low_key",
@@ -164,7 +164,7 @@
       { "speaker": "Pilot", "message": "call you base key, {Call Sign}." }
     ],
     "aircraft": [ "PT6", "K8" ],
-    "callsigns": []
+    "callsigns": ["ABC_667", "CSP_743", "RVN_592"]
   },
   {
     "phase": "base_key",
@@ -176,7 +176,7 @@
       { "speaker": "Pilot", "message": "s/w copied, gears are green, call you final Rwy-16, {Call Sign}." }
     ],
     "aircraft": [ "PT6", "K8" ],
-    "callsigns": []
+    "callsigns": ["ABC_667", "CSP_743", "RVN_592"]
   },
   {
     "phase": "final_land_pfl",
@@ -188,7 +188,7 @@
       { "speaker": "Pilot", "message": "Cleared to land Rwy-16, {Call Sign}." }
     ],
     "aircraft": [ "PT6", "K8" ],
-    "callsigns": []
+    "callsigns": ["ABC_667", "CSP_743", "RVN_592"]
   },{
     "phase": "b1_fix",
     "category": "VOR-Y Military",
@@ -199,7 +199,7 @@
       { "speaker": "Pilot", "message": "call you B-2, {Call Sign}." }
     ],
     "aircraft": [ "Military Trainer", "K8" ],
-    "callsigns": []
+    "callsigns": ["ABC_667", "CSP_743", "RVN_592"]
   },
   {
     "phase": "b2_fix",
@@ -211,7 +211,7 @@
       { "speaker": "Pilot", "message": "call you 6 miles out, {Call Sign}." }
     ],
     "aircraft": [ "Military Trainer", "K8" ],
-    "callsigns": []
+    "callsigns": ["ABC_667", "CSP_743", "RVN_592"]
   },
   {
     "phase": "6_miles_out",
@@ -223,7 +223,7 @@
       { "speaker": "Pilot", "message": "call you turning inbound, {Call Sign}." }
     ],
     "aircraft": [ "Military Trainer", "K8" ],
-    "callsigns": []
+    "callsigns": ["ABC_667", "CSP_743", "RVN_592"]
   },
   {
     "phase": "turning_inbound",
@@ -235,7 +235,7 @@
       { "speaker": "Pilot", "message": "call you steady inbound, {Call Sign}." }
     ],
     "aircraft": [ "Military Trainer", "K8" ],
-    "callsigns": []
+    "callsigns": ["ABC_667", "CSP_743", "RVN_592"]
   },
   {
     "phase": "steady_inbound",
@@ -247,7 +247,7 @@
       { "speaker": "Pilot", "message": "Descending to minima, call you runway in sight, {Call Sign}." }
     ],
     "aircraft": [ "Military Trainer", "K8" ],
-    "callsigns": []
+    "callsigns": ["ABC_667", "CSP_743", "RVN_592"]
   },
   {
     "phase": "runway_in_sight",
@@ -259,7 +259,7 @@
       { "speaker": "Pilot", "message": "s/w copied, clear to land Rwy-16, {Call Sign}." }
     ],
     "aircraft": [ "Military Trainer", "K8" ],
-    "callsigns": []
+    "callsigns": ["ABC_667", "CSP_743", "RVN_592"]
   },
   {
     "phase": "over_vor",
@@ -271,7 +271,7 @@
       { "speaker": "Pilot", "message": "call you turning inbound, {Call Sign}." }
     ],
     "aircraft": [ "Civil" ],
-    "callsigns": []
+    "callsigns": ["ATR72"]
   },
   {
     "phase": "turning_inbound",
@@ -283,7 +283,7 @@
       { "speaker": "Pilot", "message": "call you established inbound, {Call Sign}." }
     ],
     "aircraft": [ "Civil" ],
-    "callsigns": []
+    "callsigns": ["ATR72"]
   },
   {
     "phase": "established_inbound",
@@ -295,7 +295,7 @@
       { "speaker": "Pilot", "message": "Descending to minima, call you runway in sight, {Call Sign}." }
     ],
     "aircraft": [ "Civil" ],
-    "callsigns": []
+    "callsigns": ["ATR72"]
   },
   {
     "phase": "runway_in_sight",
@@ -307,7 +307,7 @@
       { "speaker": "Pilot", "message": "s/w copied, clear to land Rwy-16, {Call Sign}." }
     ],
     "aircraft": [ "Civil" ],
-    "callsigns": []
+    "callsigns": ["ATR72"]
   },
   {
     "phase": "12_dme_arc",
@@ -319,7 +319,7 @@
       { "speaker": "Pilot", "message": "call you crossing radial 300, {Call Sign}." }
     ],
     "aircraft": [ "Civil", "K8" ],
-    "callsigns": []
+    "callsigns": ["ATR72", "RVN_592"]
   },
   {
     "phase": "crossing_radial",
@@ -331,7 +331,7 @@
       { "speaker": "Pilot", "message": "call you turning inbound Rwy-16, {Call Sign}." }
     ],
     "aircraft": [ "Civil", "K8" ],
-    "callsigns": []
+    "callsigns": ["ATR72", "RVN_592"]
   },
   {
     "phase": "turning_inbound",
@@ -343,7 +343,7 @@
       { "speaker": "Pilot", "message": "Descending to minima, call you runway in sight, {Call Sign}." }
     ],
     "aircraft": [ "Civil", "K8" ],
-    "callsigns": []
+    "callsigns": ["ATR72", "RVN_592"]
   },
   {
     "phase": "runway_in_sight",
@@ -355,7 +355,7 @@
       { "speaker": "Pilot", "message": "s/w copied, clear to land Rwy-16, {Call Sign}." }
     ],
     "aircraft": [ "Civil", "K8" ],
-    "callsigns": []
+    "callsigns": ["ATR72", "RVN_592"]
   },
   {
     "phase": "over_jerin",
@@ -367,7 +367,7 @@
       { "speaker": "Pilot", "message": "call you over JR161, {Call Sign}." }
     ],
     "aircraft": [ "Civil", "K8" ],
-    "callsigns": []
+    "callsigns": ["ATR72", "RVN_592"]
   },
   {
     "phase": "over_jr161",
@@ -379,7 +379,7 @@
       { "speaker": "Pilot", "message": "call you over JR160, {Call Sign}." }
     ],
     "aircraft": [ "Civil", "K8" ],
-    "callsigns": []
+    "callsigns": ["ATR72", "RVN_592"]
   },
   {
     "phase": "over_jr160",
@@ -391,7 +391,7 @@
       { "speaker": "Pilot", "message": "s/w copied, clear to land Rwy-16, {Call Sign}." }
     ],
     "aircraft": [ "Civil", "K8" ],
-    "callsigns": []
+    "callsigns": ["ATR72", "RVN_592"]
   },
     {
     "phase": "runway_vacate",
@@ -402,7 +402,7 @@
       { "speaker": "Pilot", "message": "{Taxi via C}, after vacating contact ground 121.8, {Call Sign}." }
     ],
     "aircraft": [ "Civil", "Military Trainer", "K8" ],
-    "callsigns": []
+    "callsigns": ["ATR72", "ABC_667", "CSP_743", "RVN_592"]
   },
   {
     "phase": "taxi_to_tarmac",
@@ -414,7 +414,7 @@
       { "speaker": "Pilot", "message": "{taxi via C-P-A} to tarmac, {Call Sign}." }
     ],
     "aircraft": [ "Civil", "Military Trainer", "K8" ],
-    "callsigns": []
+    "callsigns": ["ATR72", "ABC_667", "CSP_743", "RVN_592"]
   },
   {
     "phase": "entry_5mw",
@@ -426,7 +426,7 @@
       { "speaker": "Pilot", "message": "call you downwind Rwy-16, {Call Sign}." }
     ],
     "aircraft": [ "Helicopter" ],
-    "callsigns": []
+    "callsigns": ["RNG_1171", "RNG_1172"]
   },
   {
     "phase": "downwind",
@@ -438,7 +438,7 @@
       { "speaker": "Pilot", "message": "call you final for R-P, {Call Sign}." }
     ],
     "aircraft": [ "Helicopter" ],
-    "callsigns": []
+    "callsigns": ["RNG_1171", "RNG_1172"]
   },
   {
     "phase": "final",
@@ -450,7 +450,7 @@
       { "speaker": "Pilot", "message": "s/w copied, cleared to land, {Call Sign}." }
     ],
     "aircraft": [ "Helicopter" ],
-    "callsigns": []
+    "callsigns": ["RNG_1171", "RNG_1172"]
   },
   {
     "phase": "runway_vacate",
@@ -462,7 +462,7 @@
       { "speaker": "Pilot", "message": "Air taxi via Q, will contact ground when clear, {Call Sign}." }
     ],
     "aircraft": [ "Helicopter" ],
-    "callsigns": []
+    "callsigns": ["RNG_1171", "RNG_1172"]
   },
   {
     "phase": "taxi_to_tarmac",
@@ -474,6 +474,6 @@
       { "speaker": "Pilot", "message": "Q to helipad copied, {Call Sign}." }
     ],
     "aircraft": [ "Helicopter" ],
-    "callsigns": []
+    "callsigns": ["RNG_1171", "RNG_1172"]
   }
 ]
